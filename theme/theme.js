@@ -38,6 +38,20 @@ export default {
   shadows: {
     card: "0 0.1rem 0.3rem 0 rgba(0,0,0,.1)",
   },
+  buttons: {
+    primary: {
+      cursor: "pointer",
+      color: "onPrimary",
+      bg: "primary",
+      "&:hover": {
+        bg: palette.mono[4],
+      },
+    },
+    secondary: {
+      color: "background",
+      bg: "secondary",
+    },
+  },
   styles: {
     root: {
       fontFamily: "body",

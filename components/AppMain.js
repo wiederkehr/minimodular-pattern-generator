@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-const AppMain = () => (
+const AppMain = ({ children }) => (
   <section
     sx={{
       backgroundColor: "background",
@@ -11,7 +11,7 @@ const AppMain = () => (
       p: 3,
     }}
   >
-    <p>Canvas</p>
+    {children}
   </section>
 );
 

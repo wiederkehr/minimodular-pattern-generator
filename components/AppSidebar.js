@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-const AppSidebar = () => (
+const AppSidebar = ({ children }) => (
   <section
     sx={{
       backgroundColor: "surface",
@@ -12,7 +12,7 @@ const AppSidebar = () => (
       p: 3,
     }}
   >
-    <p>Panel</p>
+    {children}
   </section>
 );
 

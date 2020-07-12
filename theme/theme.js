@@ -1,4 +1,5 @@
 import palette from "./palette";
+
 export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   sizes: {
@@ -22,7 +23,6 @@ export default {
   },
   colors: {
     text: palette.mono[0],
-    border: palette.mono[6],
     surface: palette.mono[12],
     onSurface: palette.mono[0],
     background: palette.mono[10],
@@ -40,16 +40,53 @@ export default {
   },
   buttons: {
     primary: {
+      fontFamily: "body",
       cursor: "pointer",
       color: "onPrimary",
       bg: "primary",
       "&:hover": {
         bg: palette.mono[4],
       },
+      "&:focus": {
+        bg: palette.mono[4],
+        boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",
+        outline: "none",
+      },
     },
     secondary: {
+      fontFamily: "body",
       color: "background",
       bg: "secondary",
+    },
+  },
+  forms: {
+    label: {
+      fontSize: 0,
+      textTransform: "uppercase",
+    },
+    input: {
+      fontFamily: "body",
+      borderColor: palette.mono[0],
+      "&:focus": {
+        boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",
+        outline: "none",
+      },
+    },
+    slider: {
+      backgroundColor: palette.mono[0],
+      height: "2px",
+      "&:focus": {
+        boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",
+        outline: "none",
+      },
+    },
+    select: {
+      fontFamily: "body",
+      borderColor: palette.mono[0],
+      "&:focus": {
+        boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",
+        outline: "none",
+      },
     },
   },
   styles: {

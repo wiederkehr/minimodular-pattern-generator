@@ -5,8 +5,9 @@ const AppSidebar = ({ children }) => (
   <section
     sx={{
       backgroundColor: "surface",
-      borderRight: ["none", "1px solid #000"],
-      borderBottom: ["1px solid #000", "none"],
+      borderColor: "#000",
+      borderRight: ["none", "1px solid"],
+      borderBottom: ["1px solid", "none"],
       flexGrow: 1,
       flexBasis: "sidebar",
       p: 3,

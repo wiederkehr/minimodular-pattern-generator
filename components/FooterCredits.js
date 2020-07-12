@@ -16,7 +16,6 @@ const FooterCredits = () => (
           justifyContent: "space-between",
         }}
       >
-        <p>© 2020 &nbsp; United Nations Development Programme</p>
         <p>
           Designed & Developed by{" "}
           <a
@@ -26,9 +25,9 @@ const FooterCredits = () => (
                 color: "onFooterCreditsBackgroundHighlight",
               },
             }}
-            href="https://interactivethings.com"
+            href="https://benjaminwiederkehr.com"
           >
-            Interactive Things
+            Benjamin Wiederkehr
           </a>
         </p>
       </div>

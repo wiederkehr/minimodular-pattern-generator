@@ -1,15 +1,12 @@
 import Document, { Head, Main, NextScript } from "next/document";
+import GoogleFonts from "next-google-fonts";
 
 export default class MyDocument extends Document {
   render() {
     return (
       <html>
-        <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?Inconsolata:wght@400;700&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
+        <Head></Head>
+        <GoogleFonts href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;600&display=swap" />
         <body>
           <Main />
           <NextScript />

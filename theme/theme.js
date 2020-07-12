@@ -5,9 +5,9 @@ export default {
     container: "80rem",
   },
   fonts: {
-    body: '"Inconsolata", monospace',
-    heading: '"Inconsolata", monospace',
-    monospace: '"Inconsolata", monospace',
+    body: "'IBM Plex Mono', monospace",
+    heading: "'IBM Plex Mono', monospace",
+    monospace: "'IBM Plex Mono', monospace",
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {

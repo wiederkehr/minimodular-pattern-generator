@@ -22,9 +22,6 @@ const HeaderNavigation = () => (
     <HeaderLink href="/" title="Home" mobileHidden>
       Home
     </HeaderLink>
-    <HeaderLink href="/economic-recovery" title="Dashboards">
-      Dashboards
-    </HeaderLink>
     <HeaderLink href="/about" title="About">
       About
     </HeaderLink>

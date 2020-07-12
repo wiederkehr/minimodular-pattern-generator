@@ -1,15 +1,11 @@
-import type { TypeA } from '../types'
-
-const Example: TypeA = {
-  name: 'next',
-}
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui";
+import Content from "../components/Content";
 
 export default function Home() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <h1>
-        <p>{Example.name}</p>
-      </h1>
-    </div>
-  )
+    <Content>
+      <Styled.h1>Pattern Generator</Styled.h1>
+    </Content>
+  );
 }

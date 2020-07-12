@@ -28,7 +28,7 @@ const HeaderBrand = () => (
           }}
           aria-label="Home"
         >
-          <img src="/undp-logo-30.svg" width="30" alt="UNDP logo" />
+          <img src="/minimodules_logo.svg" width="25" alt="Minimodules Logo" />
         </a>
       </Link>
     </li>
@@ -55,9 +55,7 @@ const HeaderBrand = () => (
             fontSize: 0,
           }}
           href="/"
-        >
-          United Nations Development Programme
-        </a>
+        ></a>
       </Link>
     </li>
   </ul>

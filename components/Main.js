@@ -5,8 +5,9 @@ const Main = ({ children }) => (
   <main
     sx={{
       width: "100%",
+      display: "flex",
       flex: "1 1 auto",
-      variant: "layout.main",
+      flexWrap: "wrap",
       position: "relative",
       zIndex: 100,
     }}

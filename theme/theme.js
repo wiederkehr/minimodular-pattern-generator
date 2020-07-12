@@ -3,6 +3,7 @@ export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   sizes: {
     container: "80rem",
+    sidebar: 320,
   },
   fonts: {
     body: "'IBM Plex Mono', monospace",
@@ -21,24 +22,20 @@ export default {
   },
   colors: {
     text: palette.mono[0],
-    background: palette.mono[10],
+    border: palette.mono[6],
     surface: palette.mono[12],
-    underlay: palette.mono[8],
-    primary: palette.mono[0],
-    secondary: palette.mono[6],
-    onPrimary: palette.mono[12],
-    onSecondary: palette.mono[12],
-    onBackground: palette.mono[0],
     onSurface: palette.mono[0],
-    footerNavigationBackground: palette.mono[2],
-    onFooterNavigationBackground: palette.mono[10],
-    onFooterNavigationBackgroundHighlight: palette.mono[12],
-    footerCreditsBackground: palette.mono[0],
-    onFooterCreditsBackground: palette.mono[4],
-    onFooterCreditsBackgroundHighlight: palette.mono[12],
+    background: palette.mono[10],
+    onBackground: palette.mono[0],
+    primary: palette.mono[0],
+    onPrimary: palette.mono[12],
+    secondary: palette.mono[8],
+    onSecondary: palette.mono[0],
+    link: palette.mono[0],
+    linkHover: palette.mono[2],
+    linkActive: palette.mono[0],
   },
   shadows: {
-    header: "0 0.1rem 0.3rem 0 rgba(0,0,0,.1)",
     card: "0 0.1rem 0.3rem 0 rgba(0,0,0,.1)",
   },
   styles: {
@@ -98,7 +95,7 @@ export default {
       maxWidth: "48rem",
     },
     a: {
-      color: "primary",
+      color: "text",
     },
     pre: {
       fontFamily: "monospace",

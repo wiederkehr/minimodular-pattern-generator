@@ -1,11 +1,13 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
-import Content from "../components/Content";
+import { jsx } from "theme-ui";
+import AppSidebar from "../components/AppSidebar";
+import AppMain from "../components/AppMain";
 
-export default function Home() {
+export default function app() {
   return (
-    <Content>
-      <Styled.h1>Pattern Generator</Styled.h1>
-    </Content>
+    <React.Fragment>
+      <AppSidebar />
+      <AppMain />
+    </React.Fragment>
   );
 }

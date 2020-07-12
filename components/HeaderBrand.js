@@ -28,7 +28,11 @@ const HeaderBrand = () => (
           }}
           aria-label="Home"
         >
-          <img src="/minimodules_logo.svg" width="25" alt="Minimodules Logo" />
+          <img
+            src="/minimodules_logo_positive.svg"
+            width="25"
+            alt="Minimodules Logo"
+          />
         </a>
       </Link>
     </li>
@@ -55,7 +59,9 @@ const HeaderBrand = () => (
             fontSize: 0,
           }}
           href="/"
-        ></a>
+        >
+          Minimodules
+        </a>
       </Link>
     </li>
   </ul>

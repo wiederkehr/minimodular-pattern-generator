@@ -4,7 +4,7 @@ import FooterSidebar from "./FooterSidebar";
 import FooterMain from "./FooterMain";
 import Credits from "./Credits";
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <footer
     sx={{
       alignItems: "center",

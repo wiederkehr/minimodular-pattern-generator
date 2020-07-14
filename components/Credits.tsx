@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-const Credits = () => (
+const Credits: React.FC = () => (
   <p sx={{ padding: 0, margin: 0 }}>
     Built by{" "}
     <a

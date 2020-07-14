@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-const AppMain = ({ children }) => (
+const AppMain: React.FC = ({ children }) => (
   <section
     sx={{
       backgroundColor: "background",

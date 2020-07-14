@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-const Root = ({ children }) => (
+const Root: React.FC = ({ children }) => (
   <div
     sx={{
       backgroundColor: "surface",

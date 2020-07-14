@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, Container } from "theme-ui";
+import { jsx } from "theme-ui";
 
-const Main = ({ children }) => (
+const Main: React.FC = ({ children }) => (
   <main
     sx={{
       width: "100%",

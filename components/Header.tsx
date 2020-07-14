@@ -5,7 +5,7 @@ import HeaderSidebar from "./HeaderSidebar";
 import HeaderMain from "./HeaderMain";
 import Branding from "./Branding";
 
-const Header = () => (
+const Header: React.FC = () => (
   <header
     sx={{
       alignItems: "center",

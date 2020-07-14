@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
+import Link from "next/link";
 import HeaderSidebar from "./HeaderSidebar";
 import HeaderMain from "./HeaderMain";
 import Branding from "./Branding";
@@ -18,7 +19,22 @@ const Header = () => (
     <HeaderSidebar>
       <Branding />
     </HeaderSidebar>
-    <HeaderMain />
+    <HeaderMain>
+      <Link href="/" passHref>
+        <a
+          sx={{
+            color: "link",
+            textDecoration: "none",
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
+          title="Pattern Generator 1.0"
+        >
+          Pattern Generator 1.0
+        </a>
+      </Link>
+    </HeaderMain>
   </header>
 );
 

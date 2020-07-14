@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import Link from "next/link";
 
-const HeaderMain = () => (
+const HeaderMain: React.FC = ({ children }) => (
   <section
     sx={{
       alignItems: "center",
@@ -17,20 +16,7 @@ const HeaderMain = () => (
       textTransform: "uppercase",
     }}
   >
-    <Link href="/" passHref>
-      <a
-        sx={{
-          color: "link",
-          textDecoration: "none",
-          "&:hover": {
-            textDecoration: "underline",
-          },
-        }}
-        title="Pattern Generator 1.0"
-      >
-        Pattern Generator 1.0
-      </a>
-    </Link>
+    {children}
   </section>
 );
 

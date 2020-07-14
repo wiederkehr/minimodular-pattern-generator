@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-const HeaderSidebar = ({ children }) => (
+const HeaderSidebar: React.FC = ({ children }) => (
   <section
     sx={{
       backgroundColor: "surface",

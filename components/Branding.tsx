@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui";
 import Link from "next/link";
 
-const Branding = () => (
+const Branding: React.FC = () => (
   <Link href="/" passHref>
     <a
       sx={{

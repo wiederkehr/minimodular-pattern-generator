@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-const Canvas: React.FC = () => (
-  <React.Fragment>
-    <p>Canvas</p>
-  </React.Fragment>
+interface CanvasProps {
+  configuration: Object;
+}
+
+const Canvas: React.FC<CanvasProps> = ({ configuration }) => (
+  <p>{JSON.stringify(configuration, null, 2)}</p>
 );
 
 export default Canvas;

@@ -7,8 +7,8 @@ const FooterMain: React.FC = ({ children }) => {
       sx={{
         alignItems: "center",
         display: "flex",
-        flexGrow: 99999,
         flexBasis: 0,
+        flexGrow: 99999,
         flexDirection: "row",
         flexWrap: "nowrap",
         fontSize: 0,

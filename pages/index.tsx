@@ -1,24 +1,40 @@
 /** @jsx jsx */
 import React from "react";
-import { jsx, Box, Button, Label, Input } from "theme-ui";
+import { jsx, Box, Button, Label, Input, Select } from "theme-ui";
 import AppSidebar from "../components/AppSidebar";
 import AppMain from "../components/AppMain";
 import Canvas from "../components/Canvas";
 
+interface IState {
+  allowance: number;
+  closure: string;
+  fold: string;
+  height: number;
+  webbing: number;
+  width: number;
+}
+
 export default class Index extends React.Component {
+  state: IState;
   constructor(props) {
     super(props);
     this.state = {
-      type: "roll-top",
+      allowance: 10,
+      closure: "roll-top",
+      fold: "side",
       height: 100,
-      width: 200,
       webbing: 10,
-      allowance: 20,
+      width: 200,
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.handleNumberChange = this.handleNumberChange.bind(this);
+    this.handleStringChange = this.handleStringChange.bind(this);
   }
 
-  handleChange = (event) => {
+  handleNumberChange = (event) => {
+    this.setState({ [event.target.name]: parseInt(event.target.value) });
+  };
+
+  handleStringChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
@@ -32,6 +48,26 @@ export default class Index extends React.Component {
       <React.Fragment>
         <AppSidebar>
           <Box as="form" onSubmit={this.handleSubmit}>
+            <Label>Closure</Label>
+            <Select
+              mb="3"
+              name="closure"
+              value={this.state.closure}
+              onChange={this.handleStringChange}
+            >
+              <option value="roll-top">Roll-top</option>
+              <option value="draw-string">Draw-string</option>
+            </Select>
+            <Label>Fold</Label>
+            <Select
+              mb="3"
+              name="fold"
+              value={this.state.fold}
+              onChange={this.handleStringChange}
+            >
+              <option value="side">Side</option>
+              <option value="bottom">Bottom</option>
+            </Select>
             <Label>Final Bag Width</Label>
             <Input
               mb="3"
@@ -39,7 +75,7 @@ export default class Index extends React.Component {
               name="width"
               min="0"
               value={this.state.width}
-              onChange={this.handleChange}
+              onChange={this.handleNumberChange}
             />
             <Label>Final Bag Height</Label>
             <Input
@@ -48,7 +84,7 @@ export default class Index extends React.Component {
               name="height"
               min="0"
               value={this.state.height}
-              onChange={this.handleChange}
+              onChange={this.handleNumberChange}
             />
             <Label>Seam Allowance</Label>
             <Input
@@ -57,7 +93,7 @@ export default class Index extends React.Component {
               name="allowance"
               min="0"
               value={this.state.allowance}
-              onChange={this.handleChange}
+              onChange={this.handleNumberChange}
             />
             <Label>Webbing Width</Label>
             <Input
@@ -66,13 +102,13 @@ export default class Index extends React.Component {
               name="webbing"
               min="0"
               value={this.state.webbing}
-              onChange={this.handleChange}
+              onChange={this.handleNumberChange}
             />
             <Button type="submit">Download Pattern</Button>
           </Box>
         </AppSidebar>
         <AppMain>
-          <Canvas configuration={this.state} />
+          <Canvas {...this.state} />
         </AppMain>
       </React.Fragment>
     );

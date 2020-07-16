@@ -33,14 +33,14 @@ export default class Canvas extends React.Component {
           webbing={this.props.webbing}
           width={dimensions.width}
         />
-        <Output
+        {/* <Output
           allowance={this.props.allowance}
           closure={this.props.closure}
           fold={this.props.fold}
           height={dimensions.height}
           webbing={this.props.webbing}
           width={dimensions.width}
-        />
+        /> */}
       </React.Fragment>
     );
   }

@@ -46,6 +46,9 @@ export default class Index extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <AppMain>
+          <Canvas {...this.state} />
+        </AppMain>
         <AppSidebar>
           <Box as="form" onSubmit={this.handleSubmit}>
             <Label>Closure</Label>
@@ -107,9 +110,6 @@ export default class Index extends React.Component {
             <Button type="submit">Download Pattern</Button>
           </Box>
         </AppSidebar>
-        <AppMain>
-          <Canvas {...this.state} />
-        </AppMain>
       </React.Fragment>
     );
   }

@@ -31,7 +31,7 @@ const Branding: React.FC = () => (
           marginLeft: "1rem",
         }}
       >
-        Minimodules
+        Pattern Generator
       </span>
     </a>
   </Link>

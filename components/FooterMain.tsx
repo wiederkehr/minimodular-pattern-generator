@@ -13,7 +13,6 @@ const FooterMain: React.FC = ({ children }) => {
         flexWrap: "nowrap",
         fontSize: 0,
         minWidth: "sidebar",
-        padding: 3,
       }}
     >
       {children}

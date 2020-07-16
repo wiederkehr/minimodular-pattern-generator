@@ -8,8 +8,6 @@ const Footer: React.FC = () => (
   <footer
     sx={{
       alignItems: "center",
-      backgroundColor: "surface",
-      borderTop: "1px solid #000",
       display: "flex",
       flexWrap: "wrap",
       zIndex: 300,

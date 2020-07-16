@@ -7,7 +7,7 @@ const FooterSidebar: React.FC = ({ children }) => (
       backgroundColor: "surface",
       borderColor: "#000",
       borderRight: ["none", "1px solid"],
-      borderBottom: ["1px solid", "none"],
+      borderTop: ["1px solid"],
       flexBasis: "sidebar",
       flexGrow: 1,
       fontSize: 0,

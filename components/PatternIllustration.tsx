@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box } from "theme-ui";
+import Card from "./PatternCard";
 
 interface IllustrationProps {
   allowance: number;
@@ -12,19 +13,7 @@ interface IllustrationProps {
 
 const Illustration = (props: IllustrationProps) => {
   return (
-    <Box
-      sx={{
-        backgroundColor: "surface",
-        borderRadius: 5,
-        boxShadow: "card",
-        display: "inline-block",
-        overflow: "hidden",
-        paddingBottom: "100%",
-        position: "relative",
-        verticalAlign: "middle",
-        width: "100%",
-      }}
-    >
+    <Card>
       <svg
         sx={{
           display: "inline-block",
@@ -39,13 +28,14 @@ const Illustration = (props: IllustrationProps) => {
         <Cutline height={props.height} width={props.width} />
         <Sewline
           allowance={props.allowance}
+          fold={props.fold}
           height={props.height}
           webbing={props.webbing}
           width={props.width}
         />
         <Fold fold={props.fold} height={props.height} width={props.width} />
       </svg>
-    </Box>
+    </Card>
   );
 };
 
@@ -64,14 +54,18 @@ const Cutline = ({ height, width }) => (
   />
 );
 
-const Sewline = ({ allowance, height, webbing, width }) => (
+const Sewline = ({ allowance, fold, height, webbing, width }) => (
   <rect
     fill="transparent"
-    height={height}
+    height={
+      fold == "bottom"
+        ? height - allowance
+        : height - allowance * 2 - webbing * 2
+    }
     shapeRendering="crispEdges"
     stroke="#000"
     strokeWidth="0.5"
-    width={width - allowance * 2}
+    width={fold == "bottom" ? width - allowance * 2 : width - allowance * 2}
     x={allowance}
     y={allowance + webbing}
   />

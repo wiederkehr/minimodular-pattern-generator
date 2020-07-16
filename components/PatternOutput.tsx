@@ -15,8 +15,6 @@ const Output = (props: OutputProps) => {
     <Box
       sx={{
         mt: 3,
-        p: 3,
-        border: "1px solid #000",
       }}
     >
       <pre

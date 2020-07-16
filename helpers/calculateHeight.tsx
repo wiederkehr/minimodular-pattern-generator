@@ -8,9 +8,9 @@ interface HeightProps {
 
 export const calculateHeight = (props: HeightProps): number => {
   switch (props.fold) {
-    case "side":
+    case "vertical":
       return calculateSideFoldHeight({ ...props });
-    case "bottom":
+    case "horizontal":
       return calculateBottomFoldHeight({ ...props });
     default:
       return 0;

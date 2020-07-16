@@ -4,25 +4,17 @@ import { jsx, Box, Button, Label, Input, Select } from "theme-ui";
 import AppSidebar from "../components/AppSidebar";
 import AppMain from "../components/AppMain";
 import Canvas from "../components/Canvas";
-
-interface IState {
-  allowance: number;
-  closure: string;
-  fold: string;
-  height: number;
-  webbing: number;
-  width: number;
-}
+import { Pattern } from "../types/Pattern";
 
 export default class Index extends React.Component {
-  state: IState;
+  state: Pattern;
   constructor(props) {
     super(props);
     this.state = {
       allowance: 10,
       closure: "roll-top",
-      fold: "side",
-      height: 200,
+      fold: "vertical",
+      height: 150,
       webbing: 10,
       width: 100,
     };
@@ -68,8 +60,8 @@ export default class Index extends React.Component {
               value={this.state.fold}
               onChange={this.handleStringChange}
             >
-              <option value="side">Side</option>
-              <option value="bottom">Bottom</option>
+              <option value="vertical">Vertical</option>
+              <option value="horizontal">Horizontal</option>
             </Select>
             <Label>Final Bag Width</Label>
             <Input

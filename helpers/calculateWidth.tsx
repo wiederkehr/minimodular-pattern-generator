@@ -6,9 +6,9 @@ interface WidthProps {
 
 export const calculateWidth = (props: WidthProps): number => {
   switch (props.fold) {
-    case "side":
+    case "vertical":
       return calculateSideFoldWidth({ ...props });
-    case "bottom":
+    case "horizontal":
       return calculateBottomFoldWidth({ ...props });
     default:
       return 0;

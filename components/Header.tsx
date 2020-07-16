@@ -9,8 +9,6 @@ const Header: React.FC = () => (
   <header
     sx={{
       alignItems: "center",
-      backgroundColor: "surface",
-      borderBottom: "1px solid #000",
       display: "flex",
       flexWrap: "wrap",
       zIndex: 200,
@@ -30,9 +28,7 @@ const Header: React.FC = () => (
             },
           }}
           title="Pattern Generator 1.0"
-        >
-          Pattern Generator 1.0
-        </a>
+        ></a>
       </Link>
     </HeaderMain>
   </header>

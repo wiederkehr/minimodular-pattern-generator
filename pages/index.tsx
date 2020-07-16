@@ -22,9 +22,9 @@ export default class Index extends React.Component {
       allowance: 10,
       closure: "roll-top",
       fold: "side",
-      height: 100,
+      height: 200,
       webbing: 10,
-      width: 200,
+      width: 100,
     };
     this.handleNumberChange = this.handleNumberChange.bind(this);
     this.handleStringChange = this.handleStringChange.bind(this);
@@ -50,7 +50,7 @@ export default class Index extends React.Component {
           <Box as="form" onSubmit={this.handleSubmit}>
             <Label>Closure</Label>
             <Select
-              mb="3"
+              sx={{ mb: 3 }}
               name="closure"
               value={this.state.closure}
               onChange={this.handleStringChange}
@@ -60,7 +60,7 @@ export default class Index extends React.Component {
             </Select>
             <Label>Fold</Label>
             <Select
-              mb="3"
+              sx={{ mb: 3 }}
               name="fold"
               value={this.state.fold}
               onChange={this.handleStringChange}
@@ -70,7 +70,7 @@ export default class Index extends React.Component {
             </Select>
             <Label>Final Bag Width</Label>
             <Input
-              mb="3"
+              sx={{ mb: 3 }}
               type="number"
               name="width"
               min="0"
@@ -79,7 +79,7 @@ export default class Index extends React.Component {
             />
             <Label>Final Bag Height</Label>
             <Input
-              mb="3"
+              sx={{ mb: 3 }}
               type="number"
               name="height"
               min="0"
@@ -88,7 +88,7 @@ export default class Index extends React.Component {
             />
             <Label>Seam Allowance</Label>
             <Input
-              mb="3"
+              sx={{ mb: 3 }}
               type="number"
               name="allowance"
               min="0"

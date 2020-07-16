@@ -4,7 +4,7 @@ import { jsx } from "theme-ui";
 const Root: React.FC = ({ children }) => (
   <div
     sx={{
-      backgroundColor: "surface",
+      backgroundColor: "background",
       display: "flex",
       flexDirection: "column",
       minHeight: "100vh",

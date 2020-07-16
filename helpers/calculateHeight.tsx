@@ -1,31 +1,40 @@
 interface HeightProps {
   allowance: number;
+  fold: string;
   closure: string;
   height: number;
   webbing: number;
 }
 
 export const calculateHeight = (props: HeightProps): number => {
-  let result = 0;
-  switch (props.closure) {
-    case "roll-top":
-      result = calculateRolltopHeight({
-        allowance: props.allowance,
-        height: props.height,
-        webbing: props.webbing,
-      });
-      break;
+  switch (props.fold) {
+    case "side":
+      return calculateSideFoldHeight({ ...props });
+    case "bottom":
+      return calculateBottomFoldHeight({ ...props });
     default:
-      break;
+      return 0;
   }
-  return result;
 };
 
-interface RolltopHeightProps {
-  allowance: number;
-  height: number;
-  webbing: number;
-}
+const calculateSideFoldHeight = (props: HeightProps): number => {
+  switch (props.closure) {
+    case "roll-top":
+      return props.allowance + props.height + props.webbing * 2;
+    case "draw-string":
+      return props.allowance + props.height + props.allowance * 2;
+    default:
+      return 0;
+  }
+};
 
-const calculateRolltopHeight = (props: RolltopHeightProps) =>
-  props.allowance + props.height + props.webbing * 2;
+const calculateBottomFoldHeight = (props: HeightProps): number => {
+  switch (props.closure) {
+    case "roll-top":
+      return props.height * 2 + props.webbing * 4;
+    case "draw-string":
+      return props.height * 2 + props.allowance * 2;
+    default:
+      return 0;
+  }
+};

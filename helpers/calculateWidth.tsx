@@ -5,30 +5,18 @@ interface WidthProps {
 }
 
 export const calculateWidth = (props: WidthProps): number => {
-  let result = 0;
   switch (props.fold) {
     case "side":
-      result = calculateRolltopWidth({
-        allowance: props.allowance,
-        width: props.width,
-      });
-      break;
+      return calculateSideFoldWidth({ ...props });
     case "bottom":
-      result = calculateRolltopWidth({
-        allowance: props.allowance,
-        width: props.width,
-      });
-      break;
+      return calculateBottomFoldWidth({ ...props });
     default:
-      break;
+      return 0;
   }
-  return result;
 };
 
-interface RolltopWidthProps {
-  allowance: number;
-  width: number;
-}
+const calculateSideFoldWidth = (props: WidthProps): number =>
+  props.width * 2 + props.allowance * 2;
 
-const calculateRolltopWidth = (props: RolltopWidthProps): number =>
+const calculateBottomFoldWidth = (props: WidthProps): number =>
   props.width + props.allowance * 2;

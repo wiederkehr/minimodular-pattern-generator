@@ -43,11 +43,7 @@ const Illustration = (props: IllustrationProps) => {
           webbing={props.webbing}
           width={props.width}
         />
-        {props.fold == "bottom" ? (
-          <BottomFold height={props.height} width={props.width} />
-        ) : (
-          <SideFold height={props.height} width={props.width} />
-        )}
+        <Fold fold={props.fold} height={props.height} width={props.width} />
       </svg>
     </Box>
   );
@@ -59,9 +55,9 @@ const Cutline = ({ height, width }) => (
   <rect
     fill="transparent"
     height={height}
-    shape-rendering="crispEdges"
+    shapeRendering="crispEdges"
     stroke="#000"
-    stroke-width="2"
+    strokeWidth="2"
     width={width}
     x={0}
     y={0}
@@ -71,37 +67,25 @@ const Cutline = ({ height, width }) => (
 const Sewline = ({ allowance, height, webbing, width }) => (
   <rect
     fill="transparent"
-    height={height - allowance * 2 - webbing}
-    shape-rendering="crispEdges"
+    height={height}
+    shapeRendering="crispEdges"
     stroke="#000"
-    stroke-width="0.5"
+    strokeWidth="0.5"
     width={width - allowance * 2}
     x={allowance}
     y={allowance + webbing}
   />
 );
 
-const BottomFold = ({ fold, height, width }) => (
+const Fold = ({ fold, height, width }) => (
   <line
-    shape-rendering="crispEdges"
+    shapeRendering="crispEdges"
     stroke="#000"
-    stroke-width="0.5"
-    stroke-dasharray="1"
-    x1="0"
-    y1={height / 2}
-    x2={width}
-    y2={height / 2}
-  />
-);
-const SideFold = ({ fold, height, width }) => (
-  <line
-    shape-rendering="crispEdges"
-    stroke="#000"
-    stroke-width="0.5"
-    stroke-dasharray="1"
-    x1={width / 2}
-    y1={0}
-    x2={width / 2}
-    y2={height}
+    strokeWidth="0.5"
+    strokeDasharray="1"
+    x1={fold == "bottom" ? "0" : width / 2}
+    y1={fold == "bottom" ? height / 2 : 0}
+    x2={fold == "bottom" ? width : width / 2}
+    y2={fold == "bottom" ? height / 2 : height}
   />
 );

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from "react";
-import { jsx, Box } from "theme-ui";
+import { jsx } from "theme-ui";
 import Output from "./PatternOutput";
 import Illustration from "./PatternIllustration";
 import { calculateHeight } from "../helpers/calculateHeight";
@@ -12,6 +12,7 @@ export default class Canvas extends React.Component {
       height: calculateHeight({
         allowance: this.props.allowance,
         closure: this.props.closure,
+        fold: this.props.fold,
         height: this.props.height,
         webbing: this.props.webbing,
       }),

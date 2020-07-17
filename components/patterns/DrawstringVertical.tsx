@@ -8,13 +8,12 @@ const DrawstringVertical = (props: Pattern) => (
   <React.Fragment>
     <Cutline height={props.height} width={props.width} />
     <Sewline
-      allowance={props.allowance}
-      fold={props.fold}
-      height={props.height}
-      webbing={props.webbing}
-      width={props.width}
+      height={props.height - props.allowance * 2 - props.webbing * 2}
+      width={props.width - props.allowance * 2}
+      x={props.allowance}
+      y={props.allowance + props.webbing}
     />
-    <Fold fold={props.fold} height={props.height} width={props.width} />
+    <Fold x1={props.width / 2} y1={0} x2={props.width / 2} y2={props.height} />
   </React.Fragment>
 );
 

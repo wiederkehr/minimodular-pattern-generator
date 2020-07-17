@@ -9,8 +9,6 @@ import {
 import * as PatternProps from "../types/Pattern";
 
 const Pattern = (props: PatternProps.Pattern) => {
-  console.log(props);
-
   const selectPattern = (props) => {
     if (props.closure == "roll-top") {
       if (props.fold == "vertical") {

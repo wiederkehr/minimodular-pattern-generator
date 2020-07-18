@@ -32,15 +32,10 @@ const Pattern = (props: PatternProps.Pattern) => {
         props.width + cutlineWidth
       } ${props.height + cutlineWidth}`}
       xmlns="http://www.w3.org/2000/svg"
-      sx={
-        {
-          // display: "inline-block",
-          // position: "absolute",
-          // top: "50%",
-          // left: "50%",
-          // transform: "translate(-50%, -50%)",
-        }
-      }
+      sx={{
+        // FIXME: calculate height based on outer container
+        maxHeight: "calc(100vh - 32px)",
+      }}
     >
       {selectPattern(props)}
     </svg>

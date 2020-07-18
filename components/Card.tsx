@@ -5,10 +5,10 @@ const Card: React.FC = ({ children }) => (
   <Box
     sx={{
       backgroundColor: "surface",
-      // borderRadius: 5,
+      borderRadius: 5,
       boxShadow: "card",
-      lineHeight: 0,
-      // padding: 3,
+      height: "100%",
+      padding: 3,
     }}
   >
     {children}

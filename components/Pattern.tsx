@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Box } from "theme-ui";
+import ContainerDimensions from "react-container-dimensions";
 import {
   RolltopVertical,
   RolltopHorizontal,
@@ -26,19 +27,29 @@ const Pattern = (props: PatternProps.Pattern) => {
     }
   };
   return (
-    <svg
-      version="1.1"
-      viewBox={`-${cutlineWidth / 2} -${cutlineWidth / 2} ${
-        props.width + cutlineWidth
-      } ${props.height + cutlineWidth}`}
-      xmlns="http://www.w3.org/2000/svg"
+    <Box
       sx={{
-        // FIXME: calculate height based on outer container
-        maxHeight: "calc(100vh - 32px)",
+        height: "100%",
+        lineHeight: 0,
       }}
     >
-      {selectPattern(props)}
-    </svg>
+      <ContainerDimensions>
+        {({ height }) => (
+          <svg
+            version="1.1"
+            viewBox={`-${cutlineWidth / 2} -${cutlineWidth / 2} ${
+              props.width + cutlineWidth
+            } ${props.height + cutlineWidth}`}
+            xmlns="http://www.w3.org/2000/svg"
+            sx={{
+              maxHeight: height,
+            }}
+          >
+            {selectPattern(props)}
+          </svg>
+        )}
+      </ContainerDimensions>
+    </Box>
   );
 };
 

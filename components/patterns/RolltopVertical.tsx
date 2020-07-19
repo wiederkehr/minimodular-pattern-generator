@@ -6,14 +6,19 @@ import { Pattern } from "../../types/Pattern";
 
 const RolltopVertical = (props: Pattern) => (
   <React.Fragment>
-    <Cutline height={props.height} width={props.width} />
+    <Cutline height={props.cutHeight} width={props.cutWidth} />
     <Sewline
-      height={props.height - props.allowance * 2 - props.webbing * 2}
-      width={props.width - props.allowance * 2}
+      height={props.sewHeight}
+      width={props.sewWidth * 2}
       x={props.allowance}
       y={props.allowance + props.webbing}
     />
-    <Fold x1={props.width / 2} y1={0} x2={props.width / 2} y2={props.height} />
+    <Fold
+      x1={props.cutWidth / 2}
+      y1={props.allowance + props.webbing}
+      x2={props.cutWidth / 2}
+      y2={props.cutHeight - props.allowance}
+    />
   </React.Fragment>
 );
 

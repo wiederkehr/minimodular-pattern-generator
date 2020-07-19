@@ -2,7 +2,9 @@ export interface Pattern {
   allowance: number;
   closure: string;
   fold: string;
-  height: number;
+  sewHeight: number;
   webbing: number;
-  width: number;
+  sewWidth: number;
+  cutHeight: number;
+  cutWidth: number;
 }

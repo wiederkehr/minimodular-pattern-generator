@@ -38,8 +38,8 @@ const Pattern = (props: PatternProps.Pattern) => {
           <svg
             version="1.1"
             viewBox={`-${cutlineWidth / 2} -${cutlineWidth / 2} ${
-              props.width + cutlineWidth
-            } ${props.height + cutlineWidth}`}
+              props.cutWidth + cutlineWidth
+            } ${props.cutHeight + cutlineWidth}`}
             xmlns="http://www.w3.org/2000/svg"
             sx={{
               maxHeight: height,

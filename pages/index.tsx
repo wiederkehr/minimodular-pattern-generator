@@ -5,6 +5,8 @@ import AppSidebar from "../components/AppSidebar";
 import AppMain from "../components/AppMain";
 import Canvas from "../components/Canvas";
 import { Pattern } from "../types/Pattern";
+import { calculateCutHeight } from "../helpers/calculateCutHeight";
+import { calculateCutWidth } from "../helpers/calculateCutWidth";
 
 export default class Index extends React.Component {
   state: Pattern;
@@ -14,9 +16,9 @@ export default class Index extends React.Component {
       allowance: 10,
       closure: "roll-top",
       fold: "vertical",
-      height: 150,
       webbing: 10,
-      width: 100,
+      sewHeight: 150,
+      sewWidth: 100,
     };
     this.handleNumberChange = this.handleNumberChange.bind(this);
     this.handleStringChange = this.handleStringChange.bind(this);
@@ -35,10 +37,22 @@ export default class Index extends React.Component {
   };
 
   render() {
+    const cutHeight = calculateCutHeight({
+      allowance: this.state.allowance,
+      closure: this.state.closure,
+      fold: this.state.fold,
+      height: this.state.sewHeight,
+      webbing: this.state.webbing,
+    });
+    const cutWidth = calculateCutWidth({
+      allowance: this.state.allowance,
+      fold: this.state.fold,
+      width: this.state.sewWidth,
+    });
     return (
       <React.Fragment>
         <AppMain>
-          <Canvas {...this.state} />
+          <Canvas {...this.state} cutHeight={cutHeight} cutWidth={cutWidth} />
         </AppMain>
         <AppSidebar>
           <Box as="form" onSubmit={this.handleSubmit}>
@@ -84,24 +98,24 @@ export default class Index extends React.Component {
                 Horizontal
               </Label>
             </Flex>
-            <Label>Final Bag Width: {this.state.width}</Label>
+            <Label>Bag Width: {this.state.sewWidth}</Label>
             <Slider
               sx={{ mb: 4 }}
               name="width"
               max="1000"
               min="0"
               step="10"
-              value={this.state.width}
+              value={this.state.sewWidth}
               onChange={this.handleNumberChange}
             />
-            <Label>Final Bag Height: {this.state.height}</Label>
+            <Label>Bag Height: {this.state.sewHeight}</Label>
             <Slider
               sx={{ mb: 4 }}
               name="height"
               max="1000"
               min="0"
               step="10"
-              value={this.state.height}
+              value={this.state.sewHeight}
               onChange={this.handleNumberChange}
             />
             <Label>Seam Allowance: {this.state.allowance}</Label>

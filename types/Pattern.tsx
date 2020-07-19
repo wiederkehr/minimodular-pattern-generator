@@ -3,8 +3,9 @@ export interface Pattern {
   closure: string;
   fold: string;
   sewHeight: number;
-  webbing: number;
   sewWidth: number;
-  cutHeight: number;
-  cutWidth: number;
+  webbing?: number;
+  cutHeight?: number;
+  cutWidth?: number;
+  volume?: number;
 }

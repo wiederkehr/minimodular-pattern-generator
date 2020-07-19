@@ -7,6 +7,7 @@ import Canvas from "../components/Canvas";
 import { Pattern } from "../types/Pattern";
 import { calculateCutHeight } from "../helpers/calculateCutHeight";
 import { calculateCutWidth } from "../helpers/calculateCutWidth";
+import { calculateVolume } from "../helpers/calculateVolume";
 
 export default class Index extends React.Component {
   state: Pattern;
@@ -17,8 +18,8 @@ export default class Index extends React.Component {
       closure: "roll-top",
       fold: "vertical",
       webbing: 10,
-      sewHeight: 150,
-      sewWidth: 100,
+      sewHeight: 480,
+      sewWidth: 240,
     };
     this.handleNumberChange = this.handleNumberChange.bind(this);
     this.handleStringChange = this.handleStringChange.bind(this);
@@ -49,10 +50,19 @@ export default class Index extends React.Component {
       fold: this.state.fold,
       width: this.state.sewWidth,
     });
+    const volume = calculateVolume({
+      height: this.state.sewHeight,
+      width: this.state.sewWidth,
+    });
     return (
       <React.Fragment>
         <AppMain>
-          <Canvas {...this.state} cutHeight={cutHeight} cutWidth={cutWidth} />
+          <Canvas
+            {...this.state}
+            cutHeight={cutHeight}
+            cutWidth={cutWidth}
+            volume={volume}
+          />
         </AppMain>
         <AppSidebar>
           <Box as="form" onSubmit={this.handleSubmit}>
@@ -101,7 +111,7 @@ export default class Index extends React.Component {
             <Label>Bag Width: {this.state.sewWidth}</Label>
             <Slider
               sx={{ mb: 4 }}
-              name="width"
+              name="sewWidth"
               max="1000"
               min="0"
               step="10"
@@ -111,7 +121,7 @@ export default class Index extends React.Component {
             <Label>Bag Height: {this.state.sewHeight}</Label>
             <Slider
               sx={{ mb: 4 }}
-              name="height"
+              name="sewHeight"
               max="1000"
               min="0"
               step="10"
@@ -123,7 +133,7 @@ export default class Index extends React.Component {
               sx={{ mb: 4 }}
               name="allowance"
               max="50"
-              min="0"
+              min="10"
               step="5"
               value={this.state.allowance}
               onChange={this.handleNumberChange}
@@ -133,7 +143,7 @@ export default class Index extends React.Component {
               mb="0"
               name="webbing"
               max="50"
-              min="0"
+              min="10"
               step="5"
               value={this.state.webbing}
               onChange={this.handleNumberChange}

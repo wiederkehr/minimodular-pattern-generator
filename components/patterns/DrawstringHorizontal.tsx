@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import React from "react";
-import { Cutline, Sewline, Fold } from "./PatternElements";
+import { Cutline, Sewline, Fold, Volume } from "./PatternElements";
 import { Pattern } from "../../types/Pattern";
 
 const DrawstringHorizontal = (props: Pattern) => (
@@ -18,6 +18,11 @@ const DrawstringHorizontal = (props: Pattern) => (
       y1={props.cutHeight / 2}
       x2={props.cutWidth - props.allowance}
       y2={props.cutHeight / 2}
+    />
+    <Volume
+      x={props.cutWidth / 2}
+      y={props.cutHeight / 2}
+      volume={props.volume}
     />
   </React.Fragment>
 );

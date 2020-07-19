@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import React from "react";
-import { Cutline, Sewline, Fold } from "./PatternElements";
+import { Cutline, Sewline, Fold, Volume } from "./PatternElements";
 import { Pattern } from "../../types/Pattern";
 
 const RolltopHorizontal = (props: Pattern) => (
@@ -11,13 +11,18 @@ const RolltopHorizontal = (props: Pattern) => (
       height={props.sewHeight * 2}
       width={props.sewWidth}
       x={props.allowance}
-      y={props.allowance + props.webbing}
+      y={props.webbing * 2}
     />
     <Fold
       x1={props.allowance}
       y1={props.cutHeight / 2}
       x2={props.cutWidth - props.allowance}
       y2={props.cutHeight / 2}
+    />
+    <Volume
+      x={props.cutWidth / 2}
+      y={props.cutHeight / 2}
+      volume={props.volume}
     />
   </React.Fragment>
 );

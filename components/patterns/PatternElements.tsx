@@ -97,3 +97,18 @@ export const Fold = ({ x1, y1, x2, y2 }) => (
     }}
   />
 );
+
+export const Volume = ({ x, y, volume }) => (
+  <text
+    dy=".35em"
+    x={x}
+    y={y}
+    sx={{
+      textAnchor: "middle",
+      fontSize: "12px",
+      fontWeight: "400",
+    }}
+  >
+    {volume}
+  </text>
+);

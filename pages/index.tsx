@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from "react";
-import { jsx, Box, Button, Label, Input, Select } from "theme-ui";
+import { jsx, Flex, Box, Button, Label, Slider, Radio } from "theme-ui";
 import AppSidebar from "../components/AppSidebar";
 import AppMain from "../components/AppMain";
 import Canvas from "../components/Canvas";
@@ -32,7 +32,6 @@ export default class Index extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(JSON.stringify(this.state, null, 2));
   };
 
   render() {
@@ -44,62 +43,88 @@ export default class Index extends React.Component {
         <AppSidebar>
           <Box as="form" onSubmit={this.handleSubmit}>
             <Label>Closure</Label>
-            <Select
-              sx={{ mb: 3 }}
-              name="closure"
-              value={this.state.closure}
-              onChange={this.handleStringChange}
-            >
-              <option value="roll-top">Roll-top</option>
-              <option value="draw-string">Draw-string</option>
-            </Select>
+            <Flex mb={4}>
+              <Label>
+                <Radio
+                  name="closure"
+                  value="roll-top"
+                  checked={this.state.closure == "roll-top"}
+                  onChange={this.handleStringChange}
+                />
+                Roll-top
+              </Label>
+              <Label>
+                <Radio
+                  name="closure"
+                  value="draw-string"
+                  checked={this.state.closure == "draw-string"}
+                  onChange={this.handleStringChange}
+                />
+                Draw-string
+              </Label>
+            </Flex>
             <Label>Fold</Label>
-            <Select
-              sx={{ mb: 3 }}
-              name="fold"
-              value={this.state.fold}
-              onChange={this.handleStringChange}
-            >
-              <option value="vertical">Vertical</option>
-              <option value="horizontal">Horizontal</option>
-            </Select>
-            <Label>Final Bag Width</Label>
-            <Input
-              sx={{ mb: 3 }}
-              type="number"
+            <Flex mb={4}>
+              <Label>
+                <Radio
+                  name="fold"
+                  value="vertical"
+                  checked={this.state.fold == "vertical"}
+                  onChange={this.handleStringChange}
+                />
+                Vertical
+              </Label>
+              <Label>
+                <Radio
+                  name="fold"
+                  value="horizontal"
+                  checked={this.state.fold == "horizontal"}
+                  onChange={this.handleStringChange}
+                />
+                Horizontal
+              </Label>
+            </Flex>
+            <Label>Final Bag Width: {this.state.width}</Label>
+            <Slider
+              sx={{ mb: 4 }}
               name="width"
+              max="1000"
               min="0"
+              step="10"
               value={this.state.width}
               onChange={this.handleNumberChange}
             />
-            <Label>Final Bag Height</Label>
-            <Input
-              sx={{ mb: 3 }}
-              type="number"
+            <Label>Final Bag Height: {this.state.height}</Label>
+            <Slider
+              sx={{ mb: 4 }}
               name="height"
+              max="1000"
               min="0"
+              step="10"
               value={this.state.height}
               onChange={this.handleNumberChange}
             />
-            <Label>Seam Allowance</Label>
-            <Input
-              sx={{ mb: 3 }}
-              type="number"
+            <Label>Seam Allowance: {this.state.allowance}</Label>
+            <Slider
+              sx={{ mb: 4 }}
               name="allowance"
+              max="50"
               min="0"
+              step="5"
               value={this.state.allowance}
               onChange={this.handleNumberChange}
             />
-            <Label>Webbing Width</Label>
-            <Input
-              mb="4"
-              type="number"
+            <Label>Webbing Width: {this.state.webbing}</Label>
+            <Slider
+              mb="0"
               name="webbing"
+              max="50"
               min="0"
+              step="5"
               value={this.state.webbing}
               onChange={this.handleNumberChange}
             />
-            <Button type="submit">Download Pattern</Button>
+            {/* <Button type="submit">Download Pattern</Button> */}
           </Box>
         </AppSidebar>
       </React.Fragment>

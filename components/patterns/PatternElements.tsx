@@ -3,7 +3,7 @@ import { jsx } from "theme-ui";
 
 export const cutlineWidth = 2;
 
-export const Cutline = ({ height, width }) => (
+export const Cutline = ({ height, width, scale }) => (
   <g>
     <rect
       height={height}
@@ -22,7 +22,11 @@ export const Cutline = ({ height, width }) => (
       dy=".35em"
       x={width / 2}
       y={5}
-      sx={{ textAnchor: "middle", fontSize: "8px", fontWeight: "600" }}
+      sx={{
+        fontSize: `calc(8px * ${scale})`,
+        fontWeight: "600",
+        textAnchor: "middle",
+      }}
     >
       {width}
     </text>
@@ -32,9 +36,9 @@ export const Cutline = ({ height, width }) => (
       x={-height / 2}
       y={5}
       sx={{
-        textAnchor: "middle",
-        fontSize: "8px",
+        fontSize: `calc(8px * ${scale})`,
         fontWeight: "600",
+        textAnchor: "middle",
       }}
     >
       {height}
@@ -42,7 +46,7 @@ export const Cutline = ({ height, width }) => (
   </g>
 );
 
-export const Sewline = ({ height, width, x, y }) => (
+export const Sewline = ({ height, width, x, y, scale }) => (
   <g>
     <rect
       height={height}
@@ -52,16 +56,20 @@ export const Sewline = ({ height, width, x, y }) => (
       sx={{
         fill: "transparent",
         shapeRendering: "crispEdges",
-        vectorEffect: "non-scaling-stroke",
         stroke: "#000",
         strokeWidth: "1",
+        vectorEffect: "non-scaling-stroke",
       }}
     />
     <text
       dy=".35em"
       x={x + width / 2}
       y={y + 5}
-      sx={{ textAnchor: "middle", fontSize: "6px", fontWeight: "400" }}
+      sx={{
+        fontSize: `calc(8px * ${scale})`,
+        fontWeight: "400",
+        textAnchor: "middle",
+      }}
     >
       {width}
     </text>
@@ -71,9 +79,9 @@ export const Sewline = ({ height, width, x, y }) => (
       x={(y + height / 2) * -1}
       y={x + 5}
       sx={{
-        textAnchor: "middle",
-        fontSize: "6px",
+        fontSize: `calc(8px * ${scale})`,
         fontWeight: "400",
+        textAnchor: "middle",
       }}
     >
       {height}
@@ -81,7 +89,7 @@ export const Sewline = ({ height, width, x, y }) => (
   </g>
 );
 
-export const Fold = ({ x1, y1, x2, y2 }) => (
+export const Fold = ({ x1, y1, x2, y2, scale }) => (
   <line
     x1={x1}
     y1={y1}
@@ -90,25 +98,25 @@ export const Fold = ({ x1, y1, x2, y2 }) => (
     sx={{
       fill: "transparent",
       shapeRendering: "crispEdges",
-      vectorEffect: "non-scaling-stroke",
       stroke: "#000",
       strokeDasharray: "2",
       strokeWidth: "1",
+      vectorEffect: "non-scaling-stroke",
     }}
   />
 );
 
-export const Volume = ({ x, y, volume }) => (
+export const Volume = ({ x, y, volume, scale }) => (
   <text
     dy=".35em"
     x={x}
     y={y}
     sx={{
+      fontSize: `calc(1rem * ${scale})`,
+      fontWeight: "600",
       textAnchor: "middle",
-      fontSize: "12px",
-      fontWeight: "400",
     }}
   >
-    {volume}
+    {`${volume}L`}
   </text>
 );

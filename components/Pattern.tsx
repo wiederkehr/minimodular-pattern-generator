@@ -7,24 +7,30 @@ import {
   DrawstringVertical,
   DrawstringHorizontal,
 } from "./patterns";
-import * as PatternProps from "../types/Pattern";
+import { PatternProps } from "../types/PatternProps";
 import { cutlineWidth } from "./patterns/PatternElements";
 
-const Pattern = (props: PatternProps.Pattern) => {
-  const selectPattern = (props) => {
+const Pattern = (props: PatternProps) => {
+  const renderPattern = (scale) => {
     if (props.closure == "roll-top") {
       if (props.fold == "vertical") {
-        return <RolltopVertical {...props} />;
+        return <RolltopVertical {...props} scale={scale} />;
       } else {
-        return <RolltopHorizontal {...props} />;
+        return <RolltopHorizontal {...props} scale={scale} />;
       }
     } else {
       if (props.fold == "vertical") {
-        return <DrawstringVertical {...props} />;
+        return <DrawstringVertical {...props} scale={scale} />;
       } else {
-        return <DrawstringHorizontal {...props} />;
+        return <DrawstringHorizontal {...props} scale={scale} />;
       }
     }
+  };
+  const calculateScale = (width, cutWidth, height, cutHeight) => {
+    const widthScale = cutWidth / width < 1 ? 1 : cutWidth / width;
+    const heightScale = cutHeight / height < 1 ? 1 : cutHeight / height;
+    const scale = widthScale > heightScale ? widthScale : heightScale;
+    return scale;
   };
   return (
     <Box
@@ -34,7 +40,7 @@ const Pattern = (props: PatternProps.Pattern) => {
       }}
     >
       <ContainerDimensions>
-        {({ height }) => (
+        {({ height, width }) => (
           <svg
             version="1.1"
             viewBox={`-${cutlineWidth / 2} -${cutlineWidth / 2} ${
@@ -45,7 +51,9 @@ const Pattern = (props: PatternProps.Pattern) => {
               maxHeight: height,
             }}
           >
-            {selectPattern(props)}
+            {renderPattern(
+              calculateScale(width, props.cutWidth, height, props.cutHeight)
+            )}
           </svg>
         )}
       </ContainerDimensions>

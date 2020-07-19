@@ -1,4 +1,4 @@
-export interface Pattern {
+export interface PatternProps {
   allowance: number;
   closure: string;
   fold: string;

@@ -3,7 +3,7 @@ interface VolumeProps {
   width: number;
 }
 
-export const calculateVolume = (props: VolumeProps): string => {
+export const calculateVolume = (props: VolumeProps): number => {
   //FIXME: The actual bottom is not a full circle.
   const bottomCircumference = props.width * 2;
   const bottomDiameter = bottomCircumference / Math.PI;
@@ -12,7 +12,7 @@ export const calculateVolume = (props: VolumeProps): string => {
   //FIXME: The remaining height is in reality shorter than the original height.
   const remainingHeight = props.height;
   const volume = bottomArea * remainingHeight;
-  return roundToDecimals(volume / 1000000) + "L";
+  return roundToDecimals(volume / 1000000);
 };
 
 const roundToDecimals = (num: number): number =>

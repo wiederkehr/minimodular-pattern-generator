@@ -2,9 +2,9 @@
 import { jsx } from "theme-ui";
 import React from "react";
 import { Cutline, Sewline, Fold, Volume } from "./PatternElements";
-import { Pattern } from "../../types/Pattern";
+import { PatternProps } from "../../types/PatternProps";
 
-const RolltopHorizontal = (props: Pattern) => (
+const RolltopHorizontal = (props: PatternProps) => (
   <React.Fragment>
     <Cutline height={props.cutHeight} width={props.cutWidth} />
     <Sewline

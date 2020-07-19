@@ -4,13 +4,14 @@ import { jsx, Flex, Box, Button, Label, Slider, Radio } from "theme-ui";
 import AppSidebar from "../components/AppSidebar";
 import AppMain from "../components/AppMain";
 import Canvas from "../components/Canvas";
-import { Pattern } from "../types/Pattern";
+import Pattern from "../components/Pattern";
+import { PatternProps } from "../types/PatternProps";
 import { calculateCutHeight } from "../helpers/calculateCutHeight";
 import { calculateCutWidth } from "../helpers/calculateCutWidth";
 import { calculateVolume } from "../helpers/calculateVolume";
 
 export default class Index extends React.Component {
-  state: Pattern;
+  state: PatternProps;
   constructor(props) {
     super(props);
     this.state = {
@@ -57,12 +58,14 @@ export default class Index extends React.Component {
     return (
       <React.Fragment>
         <AppMain>
-          <Canvas
-            {...this.state}
-            cutHeight={cutHeight}
-            cutWidth={cutWidth}
-            volume={volume}
-          />
+          <Canvas>
+            <Pattern
+              {...this.state}
+              cutHeight={cutHeight}
+              cutWidth={cutWidth}
+              volume={volume}
+            />
+          </Canvas>
         </AppMain>
         <AppSidebar>
           <Box as="form" onSubmit={this.handleSubmit}>

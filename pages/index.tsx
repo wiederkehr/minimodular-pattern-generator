@@ -115,7 +115,7 @@ export default class Index extends React.Component {
             <Slider
               sx={{ mb: 4 }}
               name="sewWidth"
-              max="1000"
+              max="500"
               min="0"
               step="10"
               value={this.state.sewWidth}
@@ -125,7 +125,7 @@ export default class Index extends React.Component {
             <Slider
               sx={{ mb: 4 }}
               name="sewHeight"
-              max="1000"
+              max="500"
               min="0"
               step="10"
               value={this.state.sewHeight}

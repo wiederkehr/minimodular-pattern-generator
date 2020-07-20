@@ -7,6 +7,7 @@ const Main: React.FC = ({ children }) => (
       width: "100%",
       display: "flex",
       flex: "1 1 auto",
+      flexDirection: "row-reverse",
       flexWrap: "wrap",
       position: "relative",
       zIndex: 100,

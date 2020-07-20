@@ -27,9 +27,12 @@ const Pattern = (props: PatternProps) => {
     }
   };
   const calculateScale = (width, cutWidth, height, cutHeight) => {
-    const widthScale = cutWidth / width < 1 ? 1 : cutWidth / width;
-    const heightScale = cutHeight / height < 1 ? 1 : cutHeight / height;
+    const widthScale = cutWidth / width;
+    const heightScale = cutHeight / height;
     const scale = widthScale > heightScale ? widthScale : heightScale;
+    console.log("widthScale: " + widthScale);
+    console.log("heightScale: " + heightScale);
+    console.log("scale: " + scale);
     return scale;
   };
   return (

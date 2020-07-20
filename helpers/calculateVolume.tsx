@@ -4,7 +4,7 @@ interface VolumeProps {
 }
 
 export const calculateVolume = (props: VolumeProps): number => {
-  //FIXME: The actual bottom is not a full circle.
+  //FIXME: The actual bottom is not a circle.
   const bottomCircumference = props.width * 2;
   const bottomDiameter = bottomCircumference / Math.PI;
   const bottomRadius = bottomDiameter / 2;

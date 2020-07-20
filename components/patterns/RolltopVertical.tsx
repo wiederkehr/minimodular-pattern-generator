@@ -13,8 +13,8 @@ const RolltopVertical = (props: PatternProps) => (
     />
     <Sewline
       height={props.sewHeight}
-      width={props.sewWidth * 2}
       scale={props.scale}
+      width={props.sewWidth * 2}
       x={props.allowance}
       y={props.webbing * 2}
     />

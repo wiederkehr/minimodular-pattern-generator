@@ -6,9 +6,14 @@ import { PatternProps } from "../../types/PatternProps";
 
 const RolltopHorizontal = (props: PatternProps) => (
   <React.Fragment>
-    <Cutline height={props.cutHeight} width={props.cutWidth} />
+    <Cutline
+      height={props.cutHeight}
+      width={props.cutWidth}
+      scale={props.scale}
+    />
     <Sewline
       height={props.sewHeight * 2}
+      scale={props.scale}
       width={props.sewWidth}
       x={props.allowance}
       y={props.webbing * 2}
@@ -20,9 +25,10 @@ const RolltopHorizontal = (props: PatternProps) => (
       y2={props.cutHeight / 2}
     />
     <Volume
+      scale={props.scale}
+      volume={props.volume}
       x={props.cutWidth / 2}
       y={props.cutHeight / 2}
-      volume={props.volume}
     />
   </React.Fragment>
 );

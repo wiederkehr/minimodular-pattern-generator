@@ -6,9 +6,14 @@ import { PatternProps } from "../../types/PatternProps";
 
 const DrawstringHorizontal = (props: PatternProps) => (
   <React.Fragment>
-    <Cutline height={props.cutHeight} width={props.cutWidth} />
+    <Cutline
+      height={props.cutHeight}
+      scale={props.scale}
+      width={props.cutWidth}
+    />
     <Sewline
       height={props.sewHeight * 2}
+      scale={props.scale}
       width={props.sewWidth}
       x={props.allowance}
       y={props.allowance}
@@ -20,9 +25,10 @@ const DrawstringHorizontal = (props: PatternProps) => (
       y2={props.cutHeight / 2}
     />
     <Volume
+      scale={props.scale}
+      volume={props.volume}
       x={props.cutWidth / 2}
       y={props.cutHeight / 2}
-      volume={props.volume}
     />
   </React.Fragment>
 );

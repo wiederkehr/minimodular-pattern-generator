@@ -30,9 +30,6 @@ const Pattern = (props: PatternProps) => {
     const widthScale = cutWidth / width;
     const heightScale = cutHeight / height;
     const scale = widthScale > heightScale ? widthScale : heightScale;
-    console.log("widthScale: " + widthScale);
-    console.log("heightScale: " + heightScale);
-    console.log("scale: " + scale);
     return scale;
   };
   return (

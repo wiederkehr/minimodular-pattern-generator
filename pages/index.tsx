@@ -72,7 +72,7 @@ export default class Index extends React.Component {
         <AppSidebar>
           <Box as="form" onSubmit={this.handleSubmit}>
             <Label>Closure</Label>
-            <Flex mb={4}>
+            <Flex mb={3}>
               <Label>
                 <Radio
                   name="closure"
@@ -93,7 +93,7 @@ export default class Index extends React.Component {
               </Label>
             </Flex>
             <Label>Fold</Label>
-            <Flex mb={4}>
+            <Flex mb={3}>
               <Label>
                 <Radio
                   name="fold"
@@ -115,7 +115,7 @@ export default class Index extends React.Component {
             </Flex>
             <Label>Bag Width: {this.state.sewWidth}</Label>
             <Slider
-              sx={{ mb: 4 }}
+              mb={3}
               name="sewWidth"
               max="500"
               min="0"
@@ -125,7 +125,7 @@ export default class Index extends React.Component {
             />
             <Label>Bag Height: {this.state.sewHeight}</Label>
             <Slider
-              sx={{ mb: 4 }}
+              mb={3}
               name="sewHeight"
               max="500"
               min="0"
@@ -135,7 +135,7 @@ export default class Index extends React.Component {
             />
             <Label>Seam Allowance: {this.state.allowance}</Label>
             <Slider
-              sx={{ mb: 4 }}
+              mb={3}
               name="allowance"
               max="50"
               min="10"
@@ -145,7 +145,7 @@ export default class Index extends React.Component {
             />
             <Label>Webbing Width: {this.state.webbing}</Label>
             <Slider
-              mb="0"
+              mb="4"
               name="webbing"
               max="50"
               min="10"
@@ -153,7 +153,9 @@ export default class Index extends React.Component {
               value={this.state.webbing}
               onChange={this.handleNumberChange}
             />
-            <Button type="submit">Download Pattern</Button>
+            <Button sx={{ width: "100%" }} type="submit">
+              Download Pattern
+            </Button>
           </Box>
         </AppSidebar>
       </React.Fragment>

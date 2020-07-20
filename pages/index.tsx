@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import React from "react";
+import downloadSvg from "svg-crowbar";
 import { jsx, Flex, Box, Button, Label, Slider, Radio } from "theme-ui";
 import AppSidebar from "../components/AppSidebar";
 import AppMain from "../components/AppMain";
@@ -36,6 +37,7 @@ export default class Index extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    downloadSvg(document.querySelector("svg"));
   };
 
   render() {
@@ -151,7 +153,7 @@ export default class Index extends React.Component {
               value={this.state.webbing}
               onChange={this.handleNumberChange}
             />
-            {/* <Button type="submit">Download Pattern</Button> */}
+            <Button type="submit">Download Pattern</Button>
           </Box>
         </AppSidebar>
       </React.Fragment>

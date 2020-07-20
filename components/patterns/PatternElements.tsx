@@ -4,7 +4,7 @@ import { jsx } from "theme-ui";
 export const cutlineWidth = 2;
 
 export const Cutline = ({ height, width, scale }) => (
-  <g>
+  <g id="cutline">
     <rect
       height={height}
       width={width}
@@ -19,6 +19,7 @@ export const Cutline = ({ height, width, scale }) => (
       }}
     />
     <text
+      id="cutline-width-label"
       dy=".35em"
       x={width / 2}
       y={5}
@@ -31,6 +32,7 @@ export const Cutline = ({ height, width, scale }) => (
       {width}
     </text>
     <text
+      id="cutline-height-label"
       dy=".35em"
       transform="rotate(-90)"
       x={-height / 2}
@@ -47,7 +49,7 @@ export const Cutline = ({ height, width, scale }) => (
 );
 
 export const Sewline = ({ height, width, x, y, scale }) => (
-  <g>
+  <g id="sewline">
     <rect
       height={height}
       width={width}
@@ -62,6 +64,7 @@ export const Sewline = ({ height, width, x, y, scale }) => (
       }}
     />
     <text
+      id="sewline-width-label"
       dy=".35em"
       x={x + width / 2}
       y={y + 5}
@@ -74,6 +77,7 @@ export const Sewline = ({ height, width, x, y, scale }) => (
       {width}
     </text>
     <text
+      id="sewline-height-label"
       dy=".35em"
       transform="rotate(-90)"
       x={(y + height / 2) * -1}
@@ -91,6 +95,7 @@ export const Sewline = ({ height, width, x, y, scale }) => (
 
 export const Fold = ({ x1, y1, x2, y2, scale }) => (
   <line
+    id="fold"
     x1={x1}
     y1={y1}
     x2={x2}
@@ -108,6 +113,7 @@ export const Fold = ({ x1, y1, x2, y2, scale }) => (
 
 export const Volume = ({ x, y, volume, scale }) => (
   <text
+    id="volume-label"
     dy=".35em"
     x={x}
     y={y}

@@ -15,6 +15,7 @@
     "react": "^16.12.0",
     "react-container-dimensions": "^1.4.1",
     "react-dom": "^16.12.0",
+    "svg-crowbar": "^0.6.0",
     "theme-ui": "^0.3.1"
   },
   "devDependencies": {

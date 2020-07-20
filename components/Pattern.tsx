@@ -42,6 +42,7 @@ const Pattern = (props: PatternProps) => {
       <ContainerDimensions>
         {({ height, width }) => (
           <svg
+            id={`${props.closure}-${props.fold}-${props.sewWidth}x${props.sewHeight}`}
             version="1.1"
             viewBox={`-${cutlineWidth / 2} -${cutlineWidth / 2} ${
               props.cutWidth + cutlineWidth

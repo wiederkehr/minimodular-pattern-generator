@@ -34,6 +34,7 @@ export default {
     link: palette.mono[0],
     linkHover: palette.mono[2],
     linkActive: palette.mono[0],
+    disabled: palette.mono[8],
   },
   shadows: {
     card: "0 0.1rem 0.3rem 0 rgba(0,0,0,.1)",

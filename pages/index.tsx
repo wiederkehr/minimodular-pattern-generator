@@ -146,12 +146,19 @@ export default class Index extends React.Component {
             <Label>Webbing Width: {this.state.webbing}</Label>
             <Slider
               mb="4"
+              sx={{
+                "&:disabled": {
+                  color: "disabled",
+                  backgroundColor: "disabled",
+                },
+              }}
               name="webbing"
               max="50"
               min="10"
               step="5"
               value={this.state.webbing}
               onChange={this.handleNumberChange}
+              disabled={this.state.closure != "roll-top"}
             />
             <Button sx={{ width: "100%" }} type="submit">
               Download Pattern

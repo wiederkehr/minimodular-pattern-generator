@@ -31,8 +31,6 @@ export default {
     onBackground: palette.mono[0],
     primary: palette.mono[0],
     onPrimary: palette.mono[12],
-    secondary: palette.mono[8],
-    onSecondary: palette.mono[0],
     link: palette.mono[0],
     linkHover: palette.mono[2],
     linkActive: palette.mono[0],
@@ -44,22 +42,35 @@ export default {
   buttons: {
     primary: {
       fontFamily: "body",
-      cursor: "pointer",
       color: "onPrimary",
+      cursor: "pointer",
       bg: "primary",
+      border: "2px solid",
+      borderColor: "primary",
       "&:hover": {
-        bg: palette.mono[4],
+        color: "onPrimary",
+        bg: palette.mono[3],
       },
       "&:focus": {
-        bg: palette.mono[4],
         boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",
         outline: "none",
       },
     },
     secondary: {
       fontFamily: "body",
-      color: "background",
-      bg: "secondary",
+      color: "onSurface",
+      cursor: "pointer",
+      bg: "surface",
+      border: "2px solid",
+      borderColor: "onSurface",
+      "&:hover": {
+        color: "onPrimary",
+        bg: "primary",
+      },
+      "&:focus": {
+        boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",
+        outline: "none",
+      },
     },
   },
   forms: {

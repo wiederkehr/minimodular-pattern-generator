@@ -160,7 +160,7 @@ export default class Index extends React.Component {
               onChange={this.handleNumberChange}
               disabled={this.state.closure != "roll-top"}
             />
-            <Button sx={{ width: "100%" }} type="submit">
+            <Button sx={{ width: "100%" }} variant="primary" type="submit">
               Download Pattern
             </Button>
           </Box>

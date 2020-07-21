@@ -7,9 +7,9 @@ const AppMain: React.FC = ({ children }) => (
       backgroundColor: "background",
       flexGrow: 99999,
       flexBasis: 0,
-      height: ["50vh", "100vh"],
       minWidth: "sidebar",
-      p: 3,
+      paddingX: 3,
+      paddingY: [3, 0],
     }}
   >
     {children}

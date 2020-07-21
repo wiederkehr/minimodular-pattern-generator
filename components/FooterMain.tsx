@@ -6,12 +6,13 @@ const FooterMain: React.FC = ({ children }) => {
     <section
       sx={{
         alignItems: "center",
-        display: "flex",
+        display: ["none", "flex"],
         flexBasis: 0,
         flexGrow: 99999,
         flexDirection: "row",
         flexWrap: "nowrap",
         fontSize: 0,
+        minHeight: "footer",
         minWidth: "sidebar",
       }}
     >

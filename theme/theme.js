@@ -5,8 +5,8 @@ export default {
   sizes: {
     container: "80rem",
     sidebar: 320,
-    header: 40,
-    footer: 40,
+    header: 60,
+    footer: 60,
   },
   fonts: {
     body: "'IBM Plex Mono', monospace",

@@ -1,8 +1,16 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Box } from "theme-ui";
 import React from "react";
-import Card from "./Card";
 
-const Canvas: React.FC = ({ children }) => <Card>{children}</Card>;
+const Canvas: React.FC = ({ children }) => (
+  <Box
+    sx={{
+      height: "100%",
+      lineHeight: 0,
+    }}
+  >
+    {children}
+  </Box>
+);
 
 export default Canvas;

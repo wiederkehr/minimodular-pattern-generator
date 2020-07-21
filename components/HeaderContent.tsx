@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-const HeaderMain: React.FC = ({ children }) => (
+const HeaderContent: React.FC = ({ children }) => (
   <section
     sx={{
       alignItems: "center",
@@ -20,4 +20,4 @@ const HeaderMain: React.FC = ({ children }) => (
   </section>
 );
 
-export default HeaderMain;
+export default HeaderContent;

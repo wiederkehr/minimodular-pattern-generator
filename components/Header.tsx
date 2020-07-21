@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import HeaderSidebar from "./HeaderSidebar";
-import HeaderMain from "./HeaderMain";
+import HeaderContent from "./HeaderContent";
 import Branding from "./Branding";
 
 const Header: React.FC = () => (
@@ -16,7 +16,7 @@ const Header: React.FC = () => (
     <HeaderSidebar>
       <Branding />
     </HeaderSidebar>
-    <HeaderMain />
+    <HeaderContent />
   </header>
 );
 

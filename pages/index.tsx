@@ -2,8 +2,8 @@
 import React from "react";
 import downloadSvg from "svg-crowbar";
 import { jsx, Flex, Box, Button, Label, Slider, Radio } from "theme-ui";
-import AppSidebar from "../components/AppSidebar";
-import AppMain from "../components/AppMain";
+import MainSidebar from "../components/MainSidebar";
+import MainContent from "../components/MainContent";
 import Canvas from "../components/Canvas";
 import Pattern from "../components/Pattern";
 import { PatternProps } from "../types/PatternProps";
@@ -59,7 +59,7 @@ export default class Index extends React.Component {
     });
     return (
       <React.Fragment>
-        <AppMain>
+        <MainContent>
           <Canvas>
             <Pattern
               {...this.state}
@@ -68,8 +68,8 @@ export default class Index extends React.Component {
               volume={volume}
             />
           </Canvas>
-        </AppMain>
-        <AppSidebar>
+        </MainContent>
+        <MainSidebar>
           <Box as="form" onSubmit={this.handleSubmit}>
             <Label>Closure</Label>
             <Flex mb={3}>
@@ -164,7 +164,7 @@ export default class Index extends React.Component {
               Download Pattern
             </Button>
           </Box>
-        </AppSidebar>
+        </MainSidebar>
       </React.Fragment>
     );
   }

@@ -11,7 +11,7 @@ export const Cutline = ({ height, width, scale }) => (
       x={0}
       y={0}
       sx={{
-        fill: "transparent",
+        fill: "surface",
         shapeRendering: "crispEdges",
         vectorEffect: "non-scaling-stroke",
         stroke: "#000",

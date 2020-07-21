@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-const AppMain: React.FC = ({ children }) => (
+const MainContent: React.FC = ({ children }) => (
   <section
     sx={{
       backgroundColor: "background",
@@ -16,4 +16,4 @@ const AppMain: React.FC = ({ children }) => (
   </section>
 );
 
-export default AppMain;
+export default MainContent;

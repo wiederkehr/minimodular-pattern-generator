@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-const FooterMain: React.FC = ({ children }) => {
+const FooterContent: React.FC = ({ children }) => {
   return (
     <section
       sx={{
@@ -21,4 +21,4 @@ const FooterMain: React.FC = ({ children }) => {
   );
 };
 
-export default FooterMain;
+export default FooterContent;

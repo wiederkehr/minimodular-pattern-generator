@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import FooterSidebar from "./FooterSidebar";
-import FooterMain from "./FooterMain";
+import FooterContent from "./FooterContent";
 import Credits from "./Credits";
 
 const Footer: React.FC = () => (
@@ -16,7 +16,7 @@ const Footer: React.FC = () => (
     <FooterSidebar>
       <Credits />
     </FooterSidebar>
-    <FooterMain />
+    <FooterContent />
   </footer>
 );
 

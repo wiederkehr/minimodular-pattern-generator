@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box } from "theme-ui";
+import { jsx } from "theme-ui";
 import ContainerDimensions from "react-container-dimensions";
 import {
   RolltopVertical,
@@ -33,32 +33,25 @@ const Pattern = (props: PatternProps) => {
     return scale;
   };
   return (
-    <Box
-      sx={{
-        height: "100%",
-        lineHeight: 0,
-      }}
-    >
-      <ContainerDimensions>
-        {({ height, width }) => (
-          <svg
-            id={`${props.closure}-${props.fold}-${props.sewWidth}x${props.sewHeight}`}
-            version="1.1"
-            viewBox={`-${cutlineWidth / 2} -${cutlineWidth / 2} ${
-              props.cutWidth + cutlineWidth
-            } ${props.cutHeight + cutlineWidth}`}
-            xmlns="http://www.w3.org/2000/svg"
-            sx={{
-              maxHeight: height,
-            }}
-          >
-            {renderPattern(
-              calculateScale(width, props.cutWidth, height, props.cutHeight)
-            )}
-          </svg>
-        )}
-      </ContainerDimensions>
-    </Box>
+    <ContainerDimensions>
+      {({ height, width }) => (
+        <svg
+          id={`${props.closure}-${props.fold}-${props.sewWidth}x${props.sewHeight}`}
+          version="1.1"
+          viewBox={`-${cutlineWidth / 2} -${cutlineWidth / 2} ${
+            props.cutWidth + cutlineWidth
+          } ${props.cutHeight + cutlineWidth}`}
+          xmlns="http://www.w3.org/2000/svg"
+          sx={{
+            maxHeight: height,
+          }}
+        >
+          {renderPattern(
+            calculateScale(width, props.cutWidth, height, props.cutHeight)
+          )}
+        </svg>
+      )}
+    </ContainerDimensions>
   );
 };
 

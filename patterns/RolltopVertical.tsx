@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import React from "react";
-import { Cutline, Sewline, Fold, Volume } from "./PatternElements";
-import { PatternProps } from "../../types/PatternProps";
+import { Cutline, Sewline, Fold, Volume } from "../components/PatternElements";
+import { PatternProps } from "../components/PatternProps";
 
 interface Props extends PatternProps {
   scale: number;

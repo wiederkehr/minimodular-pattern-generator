@@ -5,9 +5,9 @@ import {
   RolltopHorizontal,
   DrawstringVertical,
   DrawstringHorizontal,
-} from "./patterns";
-import { PatternProps } from "../types/PatternProps";
-import { cutlineWidth } from "./patterns/PatternElements";
+} from "../patterns";
+import { PatternProps } from "./PatternProps";
+import { cutlineWidth } from "./PatternElements";
 
 interface Props extends PatternProps {
   maxHeight: number;

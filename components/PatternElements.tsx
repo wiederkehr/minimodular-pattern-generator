@@ -22,7 +22,7 @@ export const Cutline = ({
         fill: "surface",
         shapeRendering: "crispEdges",
         vectorEffect: "non-scaling-stroke",
-        stroke: "#000",
+        stroke: "onSurface",
         strokeWidth: cutlineWidth,
       }}
     />
@@ -32,8 +32,9 @@ export const Cutline = ({
       x={width / 2}
       y={6 * scale}
       sx={{
+        color: "text",
         fontSize: `calc(10px * ${scale})`,
-        fontWeight: "600",
+        fontWeight: "bold",
         textAnchor: "middle",
       }}
     >
@@ -46,8 +47,9 @@ export const Cutline = ({
       x={-height / 2}
       y={6 * scale}
       sx={{
+        color: "text",
         fontSize: `calc(10px * ${scale})`,
-        fontWeight: "600",
+        fontWeight: "bold",
         textAnchor: "middle",
       }}
     >
@@ -78,7 +80,7 @@ export const Sewline = ({
       sx={{
         fill: "transparent",
         shapeRendering: "crispEdges",
-        stroke: "#000",
+        stroke: "onSurface",
         strokeWidth: "1",
         vectorEffect: "non-scaling-stroke",
       }}
@@ -89,8 +91,9 @@ export const Sewline = ({
       x={x + width / 2}
       y={y + 6 * scale}
       sx={{
+        color: "text",
         fontSize: `calc(10px * ${scale})`,
-        fontWeight: "400",
+        fontWeight: "body",
         textAnchor: "middle",
       }}
     >
@@ -103,8 +106,9 @@ export const Sewline = ({
       x={(y + height / 2) * -1}
       y={x + 6 * scale}
       sx={{
+        color: "text",
         fontSize: `calc(10px * ${scale})`,
-        fontWeight: "400",
+        fontWeight: "body",
         textAnchor: "middle",
       }}
     >
@@ -133,7 +137,7 @@ export const Fold = ({
     sx={{
       fill: "transparent",
       shapeRendering: "crispEdges",
-      stroke: "#000",
+      stroke: "onSurface",
       strokeDasharray: "2",
       strokeWidth: "1",
       vectorEffect: "non-scaling-stroke",
@@ -158,8 +162,9 @@ export const Volume = ({
     x={x}
     y={y}
     sx={{
+      color: "text",
       fontSize: `calc(10px * ${scale})`,
-      fontWeight: "600",
+      fontWeight: "bold",
       textAnchor: "middle",
     }}
   >

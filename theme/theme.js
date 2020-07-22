@@ -16,8 +16,8 @@ export default {
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
     body: 400,
-    heading: 700,
-    bold: 700,
+    heading: 600,
+    bold: 600,
   },
   lineHeights: {
     body: 1.5,
@@ -32,13 +32,7 @@ export default {
     border: palette.mono[8],
     primary: palette.mono[0],
     onPrimary: palette.mono[12],
-    link: palette.mono[0],
-    linkHover: palette.mono[2],
-    linkActive: palette.mono[0],
     disabled: palette.mono[8],
-  },
-  shadows: {
-    card: "0 0.1rem 0.3rem 0 rgba(0,0,0,.1)",
   },
   buttons: {
     primary: {
@@ -49,24 +43,7 @@ export default {
       border: "2px solid",
       borderColor: "primary",
       "&:hover": {
-        color: "onPrimary",
-        bg: palette.mono[3],
-      },
-      "&:focus": {
-        boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",
-        outline: "none",
-      },
-    },
-    secondary: {
-      fontFamily: "body",
-      color: "onSurface",
-      cursor: "pointer",
-      bg: "surface",
-      border: "2px solid",
-      borderColor: "onSurface",
-      "&:hover": {
-        color: "onPrimary",
-        bg: "primary",
+        textDecoration: "underline",
       },
       "&:focus": {
         boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",

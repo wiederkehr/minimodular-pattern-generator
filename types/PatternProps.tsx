@@ -4,6 +4,7 @@ export interface PatternProps {
   cutHeight: number;
   cutWidth: number;
   fold: string;
+  scale: number;
   sewHeight: number;
   sewWidth: number;
   volume: number;

@@ -6,9 +6,9 @@ const MainSidebar: React.FC = ({ children }) => (
   <section
     sx={{
       backgroundColor: "surface",
-      borderColor: "#000",
       borderRight: ["none", "1px solid"],
       borderTop: ["1px solid", "none"],
+      borderColor: ["border", "border"],
       flexGrow: 1,
       flexBasis: "sidebar",
       p: 3,

@@ -29,6 +29,7 @@ export default {
     onSurface: palette.mono[0],
     background: palette.mono[10],
     onBackground: palette.mono[0],
+    border: palette.mono[8],
     primary: palette.mono[0],
     onPrimary: palette.mono[12],
     link: palette.mono[0],

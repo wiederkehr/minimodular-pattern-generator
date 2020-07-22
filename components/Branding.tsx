@@ -8,13 +8,14 @@ const Branding: React.FC = () => (
     <a
       sx={{
         alignItems: "center",
+        color: "text",
         display: "flex",
         flexWrap: "nowrap",
         lineHeight: 1,
         padding: 3,
         textDecoration: "none",
         "&:hover": {
-          backgroundColor: "colors.mono[10]",
+          textDecoration: "underline",
         },
       }}
       aria-label="Home"

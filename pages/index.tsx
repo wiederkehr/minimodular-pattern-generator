@@ -6,36 +6,44 @@ import MainSidebar from "../components/MainSidebar";
 import MainContent from "../components/MainContent";
 import Canvas from "../components/Canvas";
 import Pattern from "../components/Pattern";
-import { PatternProps } from "../types/PatternProps";
 import { calculateCutHeight } from "../helpers/calculateCutHeight";
 import { calculateCutWidth } from "../helpers/calculateCutWidth";
 import { calculateVolume } from "../helpers/calculateVolume";
 
-export default class Index extends React.Component {
-  state: PatternProps;
-  constructor(props) {
+interface Props {}
+interface State {
+  allowance: number;
+  closure: string;
+  fold: string;
+  sewHeight: number;
+  sewWidth: number;
+  webbing: number;
+}
+
+export default class Index extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       allowance: 10,
       closure: "roll-top",
       fold: "vertical",
-      webbing: 10,
       sewHeight: 480,
       sewWidth: 240,
+      webbing: 10,
     };
     this.handleNumberChange = this.handleNumberChange.bind(this);
     this.handleStringChange = this.handleStringChange.bind(this);
   }
 
-  handleNumberChange = (event) => {
+  handleNumberChange = (event: { target: { name: any; value: string } }) => {
     this.setState({ [event.target.name]: parseInt(event.target.value) });
   };
 
-  handleStringChange = (event) => {
+  handleStringChange = (event: { target: { name: any; value: string } }) => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = (event: { target: { name: any; value: string } }) => {
     event.preventDefault();
     downloadSvg(document.querySelector("svg"));
   };

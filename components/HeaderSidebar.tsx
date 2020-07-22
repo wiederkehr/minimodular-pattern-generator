@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { jsx, Flex } from "theme-ui";
+import { jsx } from "theme-ui";
+import React from "react";
 
 const HeaderSidebar: React.FC = ({ children }) => (
   <section

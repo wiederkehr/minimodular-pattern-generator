@@ -11,7 +11,7 @@ import { PatternProps } from "../types/PatternProps";
 import { cutlineWidth } from "./patterns/PatternElements";
 
 const Pattern = (props: PatternProps) => {
-  const renderPattern = (scale) => {
+  const renderPattern = (scale: number) => {
     if (props.closure == "roll-top") {
       if (props.fold == "vertical") {
         return <RolltopVertical {...props} scale={scale} />;
@@ -26,7 +26,12 @@ const Pattern = (props: PatternProps) => {
       }
     }
   };
-  const calculateScale = (width, cutWidth, height, cutHeight) => {
+  const calculateScale = (
+    width: number,
+    cutWidth: number,
+    height: number,
+    cutHeight: number
+  ) => {
     const widthScale = cutWidth / width;
     const heightScale = cutHeight / height;
     const scale = widthScale > heightScale ? widthScale : heightScale;

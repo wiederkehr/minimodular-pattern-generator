@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
+import React from "react";
 import HeaderSidebar from "./HeaderSidebar";
 import HeaderContent from "./HeaderContent";
 import Branding from "./Branding";

@@ -19,7 +19,6 @@ const RolltopVertical = (props: PatternProps) => (
       y={props.webbing * 2}
     />
     <Fold
-      scale={props.scale}
       x1={props.cutWidth / 2}
       y1={props.webbing * 2}
       x2={props.cutWidth / 2}

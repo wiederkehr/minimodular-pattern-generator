@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
+import React from "react";
 
 const FooterSidebar: React.FC = ({ children }) => (
   <section

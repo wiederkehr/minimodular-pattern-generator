@@ -1,43 +1,68 @@
 /** @jsx jsx */
 import React from "react";
 import downloadSvg from "svg-crowbar";
+import ContainerDimensions from "react-container-dimensions";
 import { jsx, Flex, Box, Button, Label, Slider, Radio } from "theme-ui";
 import MainSidebar from "../components/MainSidebar";
 import MainContent from "../components/MainContent";
 import Canvas from "../components/Canvas";
 import Pattern from "../components/Pattern";
-import { PatternProps } from "../types/PatternProps";
 import { calculateCutHeight } from "../helpers/calculateCutHeight";
 import { calculateCutWidth } from "../helpers/calculateCutWidth";
 import { calculateVolume } from "../helpers/calculateVolume";
 
-export default class Index extends React.Component {
-  state: PatternProps;
-  constructor(props) {
+interface Props {}
+interface State {
+  allowance: number;
+  closure: string;
+  fold: string;
+  sewHeight: number;
+  sewWidth: number;
+  webbing: number;
+}
+
+export default class Index extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       allowance: 10,
       closure: "roll-top",
       fold: "vertical",
-      webbing: 10,
       sewHeight: 480,
       sewWidth: 240,
+      webbing: 10,
     };
     this.handleNumberChange = this.handleNumberChange.bind(this);
     this.handleStringChange = this.handleStringChange.bind(this);
   }
 
-  handleNumberChange = (event) => {
-    this.setState({ [event.target.name]: parseInt(event.target.value) });
+  handleNumberChange = (event: React.ChangeEvent) => {
+    const target: HTMLInputElement = event.currentTarget as HTMLInputElement;
+    const value: number = parseInt(target.value);
+    this.setState(({ [target.name]: value } as unknown) as State);
   };
 
-  handleStringChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+  handleStringChange = (event: React.ChangeEvent) => {
+    const target: HTMLInputElement = event.currentTarget as HTMLInputElement;
+    const value: string = target.value;
+    this.setState(({ [target.name]: value } as unknown) as State);
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     downloadSvg(document.querySelector("svg"));
+  };
+
+  calculateScale = (
+    width: number,
+    cutWidth: number,
+    height: number,
+    cutHeight: number
+  ) => {
+    const widthScale = cutWidth / width;
+    const heightScale = cutHeight / height;
+    const scale = widthScale > heightScale ? widthScale : heightScale;
+    return scale;
   };
 
   render() {
@@ -61,12 +86,23 @@ export default class Index extends React.Component {
       <React.Fragment>
         <MainContent>
           <Canvas>
-            <Pattern
-              {...this.state}
-              cutHeight={cutHeight}
-              cutWidth={cutWidth}
-              volume={volume}
-            />
+            <ContainerDimensions>
+              {({ height, width }) => (
+                <Pattern
+                  {...this.state}
+                  cutHeight={cutHeight}
+                  cutWidth={cutWidth}
+                  maxHeight={height}
+                  volume={volume}
+                  scale={this.calculateScale(
+                    width,
+                    cutWidth,
+                    height,
+                    cutHeight
+                  )}
+                />
+              )}
+            </ContainerDimensions>
           </Canvas>
         </MainContent>
         <MainSidebar>

@@ -4,7 +4,11 @@ import React from "react";
 import { Cutline, Sewline, Fold, Volume } from "./PatternElements";
 import { PatternProps } from "../../types/PatternProps";
 
-const DrawstringVertical = (props: PatternProps) => (
+interface Props extends PatternProps {
+  scale: number;
+}
+
+const DrawstringVertical = (props: Props) => (
   <React.Fragment>
     <Cutline
       height={props.cutHeight}

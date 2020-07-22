@@ -4,7 +4,11 @@ import React from "react";
 import { Cutline, Sewline, Fold, Volume } from "./PatternElements";
 import { PatternProps } from "../../types/PatternProps";
 
-const RolltopVertical = (props: PatternProps) => (
+interface Props extends PatternProps {
+  scale: number;
+}
+
+const RolltopVertical = (props: Props) => (
   <React.Fragment>
     <Cutline
       height={props.cutHeight}
@@ -19,7 +23,6 @@ const RolltopVertical = (props: PatternProps) => (
       y={props.webbing * 2}
     />
     <Fold
-      scale={props.scale}
       x1={props.cutWidth / 2}
       y1={props.webbing * 2}
       x2={props.cutWidth / 2}

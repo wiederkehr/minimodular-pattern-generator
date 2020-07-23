@@ -14,6 +14,7 @@ const FooterSidebar: React.FC = ({ children }) => (
       flexBasis: "sidebar",
       flexGrow: 1,
       fontSize: 0,
+      justifyContent: "space-between",
       minHeight: "footer",
       p: 3,
     }}

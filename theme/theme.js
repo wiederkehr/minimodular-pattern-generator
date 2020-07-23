@@ -33,6 +33,19 @@ export default {
     primary: palette.mono[0],
     onPrimary: palette.mono[12],
     disabled: palette.mono[8],
+    modes: {
+      dark: {
+        text: palette.mono[12],
+        surface: palette.mono[0],
+        onSurface: palette.mono[12],
+        background: palette.mono[1],
+        onBackground: palette.mono[12],
+        border: palette.mono[2],
+        primary: palette.mono[12],
+        onPrimary: palette.mono[0],
+        disabled: palette.mono[4],
+      },
+    },
   },
   buttons: {
     primary: {
@@ -58,14 +71,14 @@ export default {
     },
     input: {
       fontFamily: "body",
-      borderColor: palette.mono[0],
+      borderColor: "primary",
       "&:focus": {
         boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",
         outline: "none",
       },
     },
     slider: {
-      backgroundColor: palette.mono[0],
+      backgroundColor: "primary",
       height: "2px",
       "&:focus": {
         boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",
@@ -74,7 +87,7 @@ export default {
     },
     select: {
       fontFamily: "body",
-      borderColor: palette.mono[0],
+      borderColor: "primary",
       "&:focus": {
         boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",
         outline: "none",

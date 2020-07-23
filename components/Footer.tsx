@@ -4,6 +4,7 @@ import React from "react";
 import FooterSidebar from "./FooterSidebar";
 import FooterContent from "./FooterContent";
 import Credits from "./Credits";
+import Toggle from "./Toggle";
 
 const Footer: React.FC = () => (
   <footer
@@ -16,6 +17,7 @@ const Footer: React.FC = () => (
   >
     <FooterSidebar>
       <Credits />
+      <Toggle />
     </FooterSidebar>
     <FooterContent />
   </footer>

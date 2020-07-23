@@ -32,7 +32,7 @@ export const Cutline = ({
       x={width / 2}
       y={6 * scale}
       sx={{
-        color: "text",
+        fill: "text",
         fontSize: `calc(10px * ${scale})`,
         fontWeight: "bold",
         textAnchor: "middle",
@@ -47,7 +47,7 @@ export const Cutline = ({
       x={-height / 2}
       y={6 * scale}
       sx={{
-        color: "text",
+        fill: "text",
         fontSize: `calc(10px * ${scale})`,
         fontWeight: "bold",
         textAnchor: "middle",
@@ -91,7 +91,7 @@ export const Sewline = ({
       x={x + width / 2}
       y={y + 6 * scale}
       sx={{
-        color: "text",
+        fill: "text",
         fontSize: `calc(10px * ${scale})`,
         fontWeight: "body",
         textAnchor: "middle",
@@ -106,7 +106,7 @@ export const Sewline = ({
       x={(y + height / 2) * -1}
       y={x + 6 * scale}
       sx={{
-        color: "text",
+        fill: "text",
         fontSize: `calc(10px * ${scale})`,
         fontWeight: "body",
         textAnchor: "middle",
@@ -162,7 +162,7 @@ export const Volume = ({
     x={x}
     y={y}
     sx={{
-      color: "text",
+      fill: "text",
       fontSize: `calc(10px * ${scale})`,
       fontWeight: "bold",
       textAnchor: "middle",

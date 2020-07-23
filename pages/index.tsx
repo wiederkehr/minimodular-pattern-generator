@@ -109,7 +109,7 @@ export default class Index extends React.Component<Props, State> {
           <Box as="form" onSubmit={this.handleSubmit}>
             <Label>Closure</Label>
             <Flex mb={3}>
-              <Label>
+              <Label sx={{ alignItems: "center" }}>
                 <Radio
                   name="closure"
                   value="roll-top"
@@ -118,7 +118,7 @@ export default class Index extends React.Component<Props, State> {
                 />
                 Roll-top
               </Label>
-              <Label>
+              <Label sx={{ alignItems: "center" }}>
                 <Radio
                   name="closure"
                   value="draw-string"
@@ -130,7 +130,7 @@ export default class Index extends React.Component<Props, State> {
             </Flex>
             <Label>Fold</Label>
             <Flex mb={3}>
-              <Label>
+              <Label sx={{ alignItems: "center" }}>
                 <Radio
                   name="fold"
                   value="vertical"
@@ -139,7 +139,7 @@ export default class Index extends React.Component<Props, State> {
                 />
                 Vertical
               </Label>
-              <Label>
+              <Label sx={{ alignItems: "center" }}>
                 <Radio
                   name="fold"
                   value="horizontal"

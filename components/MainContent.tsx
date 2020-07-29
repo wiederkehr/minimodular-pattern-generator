@@ -9,8 +9,7 @@ const MainContent: React.FC = ({ children }) => (
       flexGrow: 99999,
       flexBasis: 0,
       minWidth: "sidebar",
-      paddingX: 3,
-      paddingY: [3, 0],
+      padding: 3,
     }}
   >
     {children}

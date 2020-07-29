@@ -6,15 +6,15 @@ const HeaderContent: React.FC = ({ children }) => (
   <section
     sx={{
       alignItems: "center",
+      justifyContent: "center",
       flexBasis: 0,
       flexDirection: "row",
       flexGrow: 99999,
       flexWrap: "nowrap",
       fontSize: 0,
-      display: ["none", "flex"],
-      minHeight: "header",
+      display: "flex",
+      minHeight: [0, "header"],
       minWidth: "sidebar",
-      textTransform: "uppercase",
     }}
   >
     {children}

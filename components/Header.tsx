@@ -4,6 +4,7 @@ import React from "react";
 import HeaderSidebar from "./HeaderSidebar";
 import HeaderContent from "./HeaderContent";
 import Branding from "./Branding";
+import ToggleCanvas from "./ToggleCanvas";
 
 const Header: React.FC = () => (
   <header
@@ -17,7 +18,9 @@ const Header: React.FC = () => (
     <HeaderSidebar>
       <Branding />
     </HeaderSidebar>
-    <HeaderContent />
+    <HeaderContent>
+      <ToggleCanvas />
+    </HeaderContent>
   </header>
 );
 

@@ -151,7 +151,9 @@ export default class Index extends React.Component<Props, State> {
             </Flex>
             <Label>Bag Width: {this.state.sewWidth}</Label>
             <Slider
-              mb={3}
+              sx={{
+                marginBottom: 3,
+              }}
               name="sewWidth"
               max="500"
               min="0"
@@ -161,7 +163,9 @@ export default class Index extends React.Component<Props, State> {
             />
             <Label>Bag Height: {this.state.sewHeight}</Label>
             <Slider
-              mb={3}
+              sx={{
+                marginBottom: 3,
+              }}
               name="sewHeight"
               max="500"
               min="0"
@@ -171,7 +175,9 @@ export default class Index extends React.Component<Props, State> {
             />
             <Label>Seam Allowance: {this.state.allowance}</Label>
             <Slider
-              mb={3}
+              sx={{
+                marginBottom: 3,
+              }}
               name="allowance"
               max="50"
               min="10"
@@ -181,8 +187,8 @@ export default class Index extends React.Component<Props, State> {
             />
             <Label>Webbing Width: {this.state.webbing}</Label>
             <Slider
-              mb="4"
               sx={{
+                marginBottom: 4,
                 "&:disabled": {
                   color: "disabled",
                   backgroundColor: "disabled",
@@ -196,10 +202,17 @@ export default class Index extends React.Component<Props, State> {
               onChange={this.handleNumberChange}
               disabled={this.state.closure != "roll-top"}
             />
-            <Button sx={{ width: "100%" }} variant="primary" type="submit">
+            <Button
+              sx={{ width: "100%", marginBottom: 2 }}
+              variant="primary"
+              type="submit"
+            >
               Download Pattern
             </Button>
           </Box>
+          <Button sx={{ width: "100%", marginBottom: 2 }} variant="primary">
+            See Instructions
+          </Button>
         </MainSidebar>
       </React.Fragment>
     );

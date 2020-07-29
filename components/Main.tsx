@@ -7,8 +7,10 @@ const Main: React.FC = ({ children }) => (
     sx={{
       width: "100%",
       display: "flex",
-      flex: "1 1 auto",
+      flexBasis: "auto",
       flexDirection: "row-reverse",
+      flexGrow: 1,
+      flexShrink: 1,
       flexWrap: "wrap",
       position: "relative",
       zIndex: 100,

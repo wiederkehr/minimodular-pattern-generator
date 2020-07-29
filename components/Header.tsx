@@ -11,7 +11,7 @@ const Header: React.FC = () => (
       alignItems: "center",
       display: "flex",
       flexWrap: "wrap",
-      zIndex: 200,
+      zIndex: 300,
     }}
   >
     <HeaderSidebar>

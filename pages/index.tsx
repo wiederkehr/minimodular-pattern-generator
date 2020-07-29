@@ -2,9 +2,11 @@
 import React from "react";
 import downloadSvg from "svg-crowbar";
 import ContainerDimensions from "react-container-dimensions";
-import { jsx, Box, Button, Label, Slider, Select } from "theme-ui";
+import { jsx } from "theme-ui";
+import Main from "../components/Main";
 import MainSidebar from "../components/MainSidebar";
 import MainContent from "../components/MainContent";
+import Configuration from "../components/Configuration";
 import Canvas from "../components/Canvas";
 import Pattern from "../components/Pattern";
 import { calculateCutHeight } from "../helpers/calculateCutHeight";
@@ -32,8 +34,9 @@ export default class Index extends React.Component<Props, State> {
       sewWidth: 240,
       webbing: 10,
     };
-    this.handleNumberChange = this.handleNumberChange.bind(this);
     this.handleStringChange = this.handleStringChange.bind(this);
+    this.handleNumberChange = this.handleNumberChange.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
   }
 
   handleNumberChange = (event: React.ChangeEvent) => {
@@ -51,7 +54,7 @@ export default class Index extends React.Component<Props, State> {
   handleSelectChange = (event: React.ChangeEvent) => {
     const target: HTMLInputElement = event.currentTarget as HTMLInputElement;
     const value: string = target.value;
-    const values: Array = value.split(",");
+    const values: Array<String> = value.split(",");
     this.setState(({
       closure: values[0],
       fold: values[1],
@@ -93,7 +96,7 @@ export default class Index extends React.Component<Props, State> {
       width: this.state.sewWidth,
     });
     return (
-      <React.Fragment>
+      <Main>
         <MainContent>
           <Canvas>
             <ContainerDimensions>
@@ -116,84 +119,19 @@ export default class Index extends React.Component<Props, State> {
           </Canvas>
         </MainContent>
         <MainSidebar>
-          <Box as="form" onSubmit={this.handleSubmit}>
-            <Box mb={4}>
-              <Label>Pattern</Label>
-              <Select onChange={this.handleSelectChange}>
-                <option value="roll-top,vertical">
-                  Roll-top Bag (vertical)
-                </option>
-                <option value="roll-top,horizontal">
-                  Roll-top Bag (horizontal)
-                </option>
-                <option value="draw-string,vertical">
-                  Draw-string Bag (vertical)
-                </option>
-                <option value="draw-string,horizontal">
-                  Draw-string Bag (horizontal)
-                </option>
-                <option value="roll-top,vertical">Zipper Sleeve</option>
-                <option value="roll-top,vertical">Zipper Cube</option>
-              </Select>
-            </Box>
-            <Box mb={4}>
-              <Label>Bag Width: {this.state.sewWidth}</Label>
-              <Slider
-                mb={3}
-                name="sewWidth"
-                max="500"
-                min="0"
-                step="10"
-                value={this.state.sewWidth}
-                onChange={this.handleNumberChange}
-              />
-              <Label>Bag Height: {this.state.sewHeight}</Label>
-              <Slider
-                mb={3}
-                name="sewHeight"
-                max="500"
-                min="0"
-                step="10"
-                value={this.state.sewHeight}
-                onChange={this.handleNumberChange}
-              />
-              <Label>Seam Allowance: {this.state.allowance}</Label>
-              <Slider
-                mb={3}
-                name="allowance"
-                max="50"
-                min="10"
-                step="5"
-                value={this.state.allowance}
-                onChange={this.handleNumberChange}
-              />
-              <Label>Webbing Width: {this.state.webbing}</Label>
-              <Slider
-                sx={{
-                  "&:disabled": {
-                    color: "disabled",
-                    backgroundColor: "disabled",
-                  },
-                }}
-                name="webbing"
-                max="50"
-                min="10"
-                step="5"
-                value={this.state.webbing}
-                onChange={this.handleNumberChange}
-                disabled={this.state.closure != "roll-top"}
-              />
-            </Box>
-            <Button
-              sx={{ width: "100%", marginBottom: 2 }}
-              variant="primary"
-              type="submit"
-            >
-              Download Pattern
-            </Button>
-          </Box>
+          <Configuration
+            handleSubmit={this.handleSubmit}
+            handleSelectChange={this.handleSelectChange}
+            handleNumberChange={this.handleNumberChange}
+            allowance={this.state.allowance}
+            closure={this.state.closure}
+            fold={this.state.fold}
+            sewHeight={this.state.sewHeight}
+            sewWidth={this.state.sewWidth}
+            webbing={this.state.webbing}
+          />
         </MainSidebar>
-      </React.Fragment>
+      </Main>
     );
   }
 }

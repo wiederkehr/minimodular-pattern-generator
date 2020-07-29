@@ -2,7 +2,7 @@
 import React from "react";
 import downloadSvg from "svg-crowbar";
 import ContainerDimensions from "react-container-dimensions";
-import { jsx, Flex, Box, Button, Label, Slider, Radio, Select } from "theme-ui";
+import { jsx, Box, Button, Label, Slider, Select } from "theme-ui";
 import MainSidebar from "../components/MainSidebar";
 import MainContent from "../components/MainContent";
 import Canvas from "../components/Canvas";
@@ -192,9 +192,6 @@ export default class Index extends React.Component<Props, State> {
               Download Pattern
             </Button>
           </Box>
-          <Button sx={{ width: "100%", marginBottom: 2 }} variant="primary">
-            See Instructions
-          </Button>
         </MainSidebar>
       </React.Fragment>
     );

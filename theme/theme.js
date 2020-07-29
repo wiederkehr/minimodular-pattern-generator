@@ -38,7 +38,7 @@ export default {
         text: palette.mono[12],
         surface: palette.mono[0],
         onSurface: palette.mono[12],
-        background: palette.mono[1],
+        background: palette.mono[2],
         onBackground: palette.mono[12],
         border: palette.mono[2],
         primary: palette.mono[12],
@@ -49,14 +49,18 @@ export default {
   },
   buttons: {
     primary: {
-      fontFamily: "body",
-      color: "onPrimary",
-      cursor: "pointer",
-      bg: "primary",
+      bg: "transparent",
       border: "2px solid",
       borderColor: "primary",
+      color: "primary",
+      cursor: "pointer",
+      fontFamily: "body",
+      fontSize: 1,
+      fontWeight: "bold",
+      textTransform: "uppercase",
       "&:hover": {
-        textDecoration: "underline",
+        bg: "primary",
+        color: "onPrimary",
       },
       "&:focus": {
         boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",
@@ -86,8 +90,9 @@ export default {
       },
     },
     select: {
-      fontFamily: "body",
       borderColor: "primary",
+      fontFamily: "body",
+      fontSize: 1,
       "&:focus": {
         boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",
         outline: "none",

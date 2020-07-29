@@ -56,7 +56,6 @@ export default {
       cursor: "pointer",
       fontFamily: "body",
       fontSize: 1,
-      fontWeight: "bold",
       textTransform: "uppercase",
       "&:hover": {
         bg: "primary",

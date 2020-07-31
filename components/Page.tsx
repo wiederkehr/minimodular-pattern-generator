@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui";
 import React from "react";
 
-const Root: React.FC = ({ children }) => (
+const Page: React.FC = ({ children }) => (
   <div
     sx={{
       backgroundColor: "background",
@@ -15,4 +15,4 @@ const Root: React.FC = ({ children }) => (
   </div>
 );
 
-export default Root;
+export default Page;

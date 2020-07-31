@@ -32,6 +32,9 @@ export default {
     border: palette.mono[8],
     primary: palette.mono[0],
     onPrimary: palette.mono[12],
+    toggle: palette.mono[8],
+    onToggle: palette.mono[6],
+    onActiveToggle: palette.mono[0],
     disabled: palette.mono[8],
     modes: {
       dark: {
@@ -63,6 +66,24 @@ export default {
       },
       "&:focus": {
         boxShadow: "rgba(0,0,0,0.1) 0px 0px 0px 3px",
+        outline: "none",
+      },
+    },
+    toggle: {
+      bg: "transparent",
+      borderRadius: 0,
+      color: "onToggle",
+      cursor: "pointer",
+      fontFamily: "body",
+      fontSize: 0,
+      paddingX: 3,
+      paddingY: 1,
+      textTransform: "uppercase",
+      "&:hover": {
+        bg: "toggle",
+        color: "onActiveToggle",
+      },
+      "&:focus": {
         outline: "none",
       },
     },

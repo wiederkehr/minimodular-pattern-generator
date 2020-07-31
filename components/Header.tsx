@@ -4,9 +4,8 @@ import React from "react";
 import HeaderSidebar from "./HeaderSidebar";
 import HeaderContent from "./HeaderContent";
 import Branding from "./Branding";
-import ToggleCanvas from "./ToggleCanvas";
 
-const Header: React.FC = () => (
+const Header: React.FC = ({ children }) => (
   <header
     sx={{
       alignItems: "center",
@@ -18,9 +17,7 @@ const Header: React.FC = () => (
     <HeaderSidebar>
       <Branding />
     </HeaderSidebar>
-    <HeaderContent>
-      <ToggleCanvas />
-    </HeaderContent>
+    <HeaderContent>{children}</HeaderContent>
   </header>
 );
 

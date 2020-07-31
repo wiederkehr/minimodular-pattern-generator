@@ -9,21 +9,14 @@ interface Props {
 
 const ToggleDisplay = (props: Props) => (
   <Box sx={{ marginTop: 3 }}>
-    <Toggle>
-      <ToggleOption
-        onClick={props.toggleDisplay}
-        value="pattern"
-        active={props.display === "pattern"}
-      >
-        Pattern
-      </ToggleOption>
-      <ToggleOption
-        onClick={props.toggleDisplay}
-        value="instruction"
-        active={props.display === "instruction"}
-      >
-        Instruction
-      </ToggleOption>
+    <Toggle
+      value={props.display}
+      onChange={(value: string) => {
+        props.toggleDisplay(value);
+      }}
+    >
+      <ToggleOption value="pattern">Pattern</ToggleOption>
+      <ToggleOption value="instruction">Instruction</ToggleOption>
     </Toggle>
   </Box>
 );

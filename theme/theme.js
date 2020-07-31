@@ -80,7 +80,6 @@ export default {
       paddingY: 1,
       textTransform: "uppercase",
       "&:hover": {
-        bg: "toggle",
         color: "onActiveToggle",
       },
       "&:focus": {

@@ -2,18 +2,39 @@
 import { jsx, Button } from "theme-ui";
 import React, { ReactNode } from "react";
 
-const Toggle: React.FC = ({ children }) => (
-  <ul sx={{ listStyle: "none", m: 0, p: 0 }}>{children}</ul>
-);
-
-interface OptionProps {
-  onClick: Function;
+interface ToggleProps {
   children: ReactNode;
+  onChange: Function;
   value: string;
-  active: boolean;
 }
 
-const ToggleOption = (props: OptionProps) => (
+const Toggle = (props: ToggleProps) => {
+  const handleClick = (value: string) => {
+    props.onChange(value);
+  };
+  const childrenWithProps = React.Children.map(
+    props.children,
+    (child: React.ReactNode, index: number) => {
+      return React.cloneElement(child, {
+        onClick: (value: string) => {
+          handleClick(value);
+        },
+        key: index,
+        active: props.value === child.props.value,
+      });
+    }
+  );
+  return <ul sx={{ listStyle: "none", m: 0, p: 0 }}>{childrenWithProps}</ul>;
+};
+
+interface ToggleOptionProps {
+  active?: boolean;
+  children: ReactNode;
+  onClick?: Function;
+  value: string;
+}
+
+const ToggleOption = (props: ToggleOptionProps) => (
   <li
     sx={{
       border: "1px solid",
@@ -40,11 +61,12 @@ const ToggleOption = (props: OptionProps) => (
 );
 
 interface ToggleButtonProps {
-  onClick: Function;
-  value: string;
-  active: boolean;
+  active?: boolean;
   children: ReactNode;
+  onClick?: Function;
+  value: string;
 }
+
 const ToggleButton = (props: ToggleButtonProps) => (
   <Button
     variant="toggle"
@@ -53,7 +75,7 @@ const ToggleButton = (props: ToggleButtonProps) => (
       color: props.active ? "onActiveToggle" : "onToggle",
     }}
     onClick={() => {
-      props.onClick(props.value);
+      props.onClick ? props.onClick(props.value) : null;
     }}
   >
     {props.children}

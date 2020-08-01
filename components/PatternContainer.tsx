@@ -2,7 +2,7 @@
 import { jsx, Box } from "theme-ui";
 import React from "react";
 
-const Canvas: React.FC = ({ children }) => (
+const PatternContainer: React.FC = ({ children }) => (
   <Box
     sx={{
       height: "100%",
@@ -13,4 +13,4 @@ const Canvas: React.FC = ({ children }) => (
   </Box>
 );
 
-export default Canvas;
+export default PatternContainer;

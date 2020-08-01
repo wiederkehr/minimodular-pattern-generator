@@ -9,18 +9,12 @@ interface ToggleProps {
 }
 
 const Toggle = (props: ToggleProps) => {
-  const handleClick = (value: string) => {
-    props.onChange(value);
-  };
   const childrenWithProps = React.Children.map(
     props.children,
-    (child: React.ReactNode, index: number) => {
-      return React.cloneElement(child, {
-        onClick: (value: string) => {
-          handleClick(value);
-        },
-        key: index,
+    (child: React.ReactNode) => {
+      return React.cloneElement(child as React.ReactElement<any>, {
         active: props.value === child.props.value,
+        onClick: props.onChange,
       });
     }
   );

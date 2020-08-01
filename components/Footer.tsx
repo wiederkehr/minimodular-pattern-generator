@@ -4,7 +4,7 @@ import React from "react";
 import FooterSidebar from "./FooterSidebar";
 import FooterContent from "./FooterContent";
 import Credits from "./Credits";
-import ToggleTheme from "./ToggleTheme";
+import ThemeToggle from "./ThemeToggle";
 
 const Footer: React.FC = () => (
   <footer
@@ -17,7 +17,7 @@ const Footer: React.FC = () => (
   >
     <FooterSidebar>
       <Credits />
-      <ToggleTheme />
+      <ThemeToggle />
     </FooterSidebar>
     <FooterContent />
   </footer>

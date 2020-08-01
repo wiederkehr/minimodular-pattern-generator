@@ -10,9 +10,10 @@ import Main from "../components/Main";
 import MainContent from "../components/MainContent";
 import MainSidebar from "../components/MainSidebar";
 import Configuration from "../components/Configuration";
-import Canvas from "../components/Canvas";
 import Pattern from "../components/Pattern";
-import ToggleDisplay from "../components/ToggleDisplay";
+import PatternContainer from "../components/PatternContainer";
+import Instruction from "../components/Instruction";
+import DisplayToggle from "../components/DisplayToggle";
 import { calculateCutHeight } from "../helpers/calculateCutHeight";
 import { calculateCutWidth } from "../helpers/calculateCutWidth";
 import { calculateVolume } from "../helpers/calculateVolume";
@@ -38,27 +39,20 @@ export default class Index extends React.Component<Props, State> {
       sewHeight: 480,
       sewWidth: 240,
       webbing: 10,
-      display: "pattern",
+      display: "instruction",
     };
-    this.toggleDisplay = this.toggleDisplay.bind(this);
-    this.handleNumberChange = this.handleNumberChange.bind(this);
-    this.handleStringChange = this.handleStringChange.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
+    this.handleSliderChange = this.handleSliderChange.bind(this);
+    this.toggleDisplay = this.toggleDisplay.bind(this);
   }
 
   toggleDisplay = (value: string) => {
     this.setState(({ display: value } as unknown) as State);
   };
 
-  handleNumberChange = (event: React.ChangeEvent) => {
+  handleSliderChange = (event: React.ChangeEvent) => {
     const target: HTMLInputElement = event.currentTarget as HTMLInputElement;
     const value: number = parseInt(target.value);
-    this.setState(({ [target.name]: value } as unknown) as State);
-  };
-
-  handleStringChange = (event: React.ChangeEvent) => {
-    const target: HTMLInputElement = event.currentTarget as HTMLInputElement;
-    const value: string = target.value;
     this.setState(({ [target.name]: value } as unknown) as State);
   };
 
@@ -97,17 +91,20 @@ export default class Index extends React.Component<Props, State> {
       height: this.state.sewHeight,
       webbing: this.state.webbing,
     });
+
     const cutWidth = calculateCutWidth({
       allowance: this.state.allowance,
       fold: this.state.fold,
       width: this.state.sewWidth,
     });
+
     const volume = calculateVolume({
       height: this.state.sewHeight,
       width: this.state.sewWidth,
     });
+
     const DisplayPattern = (
-      <Canvas>
+      <PatternContainer>
         <ContainerDimensions>
           {({ height, width }) => (
             <Pattern
@@ -120,15 +117,19 @@ export default class Index extends React.Component<Props, State> {
             />
           )}
         </ContainerDimensions>
-      </Canvas>
+      </PatternContainer>
     );
+
     const DisplayInstructions = (
-      <p>{`These are the instructions to build a ${this.state.fold}, ${this.state.closure} bag.`}</p>
+      <Instruction>
+        <p>{`These are the instructions to build a ${this.state.fold}, ${this.state.closure} bag.`}</p>
+      </Instruction>
     );
+
     return (
       <Page>
         <Header>
-          <ToggleDisplay
+          <DisplayToggle
             display={this.state.display}
             toggleDisplay={this.toggleDisplay}
           />
@@ -141,9 +142,9 @@ export default class Index extends React.Component<Props, State> {
           </MainContent>
           <MainSidebar>
             <Configuration
-              handleSubmit={this.handleSubmit}
               handleSelectChange={this.handleSelectChange}
-              handleNumberChange={this.handleNumberChange}
+              handleSliderChange={this.handleSliderChange}
+              handleSubmit={this.handleSubmit}
               allowance={this.state.allowance}
               closure={this.state.closure}
               fold={this.state.fold}

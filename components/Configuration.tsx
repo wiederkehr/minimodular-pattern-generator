@@ -3,9 +3,9 @@ import { jsx, Box, Button, Label, Slider, Select } from "theme-ui";
 import { ReactEventHandler } from "react";
 
 interface Props {
-  handleSubmit: ReactEventHandler;
   handleSelectChange: ReactEventHandler;
-  handleNumberChange: ReactEventHandler;
+  handleSliderChange: ReactEventHandler;
+  handleSubmit: ReactEventHandler;
   allowance: number;
   closure: string;
   fold: string;
@@ -38,7 +38,7 @@ const Configuration = (props: Props) => (
         min="0"
         step="10"
         value={props.sewWidth}
-        onChange={props.handleNumberChange}
+        onChange={props.handleSliderChange}
       />
       <Label>Bag Height: {props.sewHeight}</Label>
       <Slider
@@ -48,7 +48,7 @@ const Configuration = (props: Props) => (
         min="0"
         step="10"
         value={props.sewHeight}
-        onChange={props.handleNumberChange}
+        onChange={props.handleSliderChange}
       />
       <Label>Seam Allowance: {props.allowance}</Label>
       <Slider
@@ -58,7 +58,7 @@ const Configuration = (props: Props) => (
         min="10"
         step="5"
         value={props.allowance}
-        onChange={props.handleNumberChange}
+        onChange={props.handleSliderChange}
       />
       <Label>Webbing Width: {props.webbing}</Label>
       <Slider
@@ -73,7 +73,7 @@ const Configuration = (props: Props) => (
         min="10"
         step="5"
         value={props.webbing}
-        onChange={props.handleNumberChange}
+        onChange={props.handleSliderChange}
         disabled={props.closure != "roll-top"}
       />
     </Box>

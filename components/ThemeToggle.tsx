@@ -3,7 +3,7 @@ import { jsx } from "theme-ui";
 import React from "react";
 import { useColorMode } from "theme-ui";
 
-const ToggleTheme: React.FC = () => {
+const ThemeToggle: React.FC = () => {
   const [colorMode, setColorMode] = useColorMode();
   return (
     <a
@@ -18,4 +18,4 @@ const ToggleTheme: React.FC = () => {
   );
 };
 
-export default ToggleTheme;
+export default ThemeToggle;

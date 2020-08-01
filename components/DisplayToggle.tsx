@@ -7,18 +7,13 @@ interface Props {
   toggleDisplay: Function;
 }
 
-const ToggleDisplay = (props: Props) => (
+const DisplayToggle = (props: Props) => (
   <Box sx={{ marginTop: 3 }}>
-    <Toggle
-      value={props.display}
-      onChange={(value: string) => {
-        props.toggleDisplay(value);
-      }}
-    >
+    <Toggle value={props.display} onChange={props.toggleDisplay}>
       <ToggleOption value="pattern">Pattern</ToggleOption>
       <ToggleOption value="instruction">Instruction</ToggleOption>
     </Toggle>
   </Box>
 );
 
-export default ToggleDisplay;
+export default DisplayToggle;

@@ -67,12 +67,10 @@ export default class Index extends React.Component<Props, State> {
       height: this.state.sewHeight,
       webbing: this.state.webbing,
     });
-
     const cutWidth = this.state.module.derivates.cutWidth({
       allowance: this.state.allowance,
       width: this.state.sewWidth,
     });
-
     const volume = this.state.module.derivates.volume({
       height: this.state.sewHeight,
       width: this.state.sewWidth,

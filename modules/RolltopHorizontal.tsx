@@ -8,6 +8,7 @@ import { calculateVolume } from "../helpers/calculateVolume";
 
 interface Props extends PatternProps {
   scale: number;
+  webbing: number;
 }
 
 export default {

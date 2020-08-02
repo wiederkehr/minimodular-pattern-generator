@@ -6,6 +6,7 @@ import { cutlineWidth } from "./PatternElements";
 
 interface Props extends PatternProps {
   module: object;
+  webbing: number;
 }
 
 const Pattern = (props: Props) => {

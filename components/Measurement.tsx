@@ -3,28 +3,24 @@ import { jsx, Box } from "theme-ui";
 
 interface MeasurementProps {
   allowance: number;
-  closure: string;
-  fold: string;
-  height: number;
+  cutHeight: number;
+  cutWidth: number;
+  sewHeight: number;
+  sewWidth: number;
   webbing: number;
-  width: number;
+  volume: number;
 }
 
 const Measurement = (props: MeasurementProps) => (
-  <Box
+  <pre
     sx={{
-      mt: 3,
+      mY: 3,
+      mX: 0,
     }}
   >
-    <pre
-      sx={{
-        m: 0,
-      }}
-    >
-      <span>Final Dimensions: </span>
-      {JSON.stringify(props, null, 2)}
-    </pre>
-  </Box>
+    Dimensions:
+    {JSON.stringify(props, null, 2)}
+  </pre>
 );
 
 export default Measurement;

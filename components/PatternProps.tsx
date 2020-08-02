@@ -5,5 +5,4 @@ export interface PatternProps {
   sewHeight: number;
   sewWidth: number;
   volume: number;
-  webbing: number;
 }

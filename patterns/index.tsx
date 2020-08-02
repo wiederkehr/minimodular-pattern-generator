@@ -1,4 +1,11 @@
-export { default as RolltopVertical } from "./RolltopVertical";
-export { default as RolltopHorizontal } from "./RolltopHorizontal";
-export { default as DrawstringVertical } from "./DrawstringVertical";
-export { default as DrawstringHorizontal } from "./DrawstringHorizontal";
+import { default as RolltopVertical } from "./RolltopVertical";
+import { default as RolltopHorizontal } from "./RolltopHorizontal";
+import { default as DrawstringVertical } from "./DrawstringVertical";
+import { default as DrawstringHorizontal } from "./DrawstringHorizontal";
+
+export default [
+  RolltopVertical,
+  RolltopHorizontal,
+  DrawstringVertical,
+  DrawstringHorizontal,
+];

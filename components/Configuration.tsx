@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Box, Button, Label, Slider, Select } from "theme-ui";
 import { ReactEventHandler } from "react";
+import patterns from "../patterns";
 
 interface Props {
   handleSelectChange: ReactEventHandler;
@@ -12,6 +13,7 @@ interface Props {
   sewHeight: number;
   sewWidth: number;
   webbing: number;
+  patterns: Array<any>;
 }
 
 const Configuration = (props: Props) => (
@@ -19,14 +21,9 @@ const Configuration = (props: Props) => (
     <Box mb={4}>
       <Label>Pattern</Label>
       <Select onChange={props.handleSelectChange}>
-        <option value="roll-top,vertical">Roll-top Bag (vertical)</option>
-        <option value="roll-top,horizontal">Roll-top Bag (horizontal)</option>
-        <option value="draw-string,vertical">Draw-string Bag (vertical)</option>
-        <option value="draw-string,horizontal">
-          Draw-string Bag (horizontal)
-        </option>
-        <option value="roll-top,vertical">Zipper Sleeve</option>
-        <option value="roll-top,vertical">Zipper Cube</option>
+        {patterns.map((pattern, index) => (
+          <option value={index}>{pattern.name}</option>
+        ))}
       </Select>
     </Box>
     <Box mb={4}>

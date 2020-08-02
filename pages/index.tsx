@@ -10,23 +10,20 @@ import Main from "../components/Main";
 import MainContent from "../components/MainContent";
 import MainSidebar from "../components/MainSidebar";
 import Configuration from "../components/Configuration";
-import Pattern from "../components/Pattern";
+import PatternRenderer from "../components/PatternRenderer";
 import PatternContainer from "../components/PatternContainer";
 import Instruction from "../components/Instruction";
 import DisplayToggle from "../components/DisplayToggle";
-import { calculateCutHeight } from "../helpers/calculateCutHeight";
-import { calculateCutWidth } from "../helpers/calculateCutWidth";
-import { calculateVolume } from "../helpers/calculateVolume";
+import Patterns from "../patterns";
 
 interface Props {}
 interface State {
   allowance: number;
-  closure: string;
-  fold: string;
   sewHeight: number;
   sewWidth: number;
   webbing: number;
   display: "pattern" | "instruction";
+  pattern: Object;
 }
 
 export default class Index extends React.Component<Props, State> {
@@ -34,12 +31,11 @@ export default class Index extends React.Component<Props, State> {
     super(props);
     this.state = {
       allowance: 10,
-      closure: "roll-top",
-      fold: "vertical",
       sewHeight: 480,
       sewWidth: 240,
       webbing: 10,
-      display: "instruction",
+      display: "pattern",
+      pattern: Patterns[0],
     };
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleSliderChange = this.handleSliderChange.bind(this);
@@ -59,11 +55,7 @@ export default class Index extends React.Component<Props, State> {
   handleSelectChange = (event: React.ChangeEvent) => {
     const target: HTMLInputElement = event.currentTarget as HTMLInputElement;
     const value: string = target.value;
-    const values: Array<String> = value.split(",");
-    this.setState(({
-      closure: values[0],
-      fold: values[1],
-    } as unknown) as State);
+    this.setState(({ pattern: Patterns[value] } as unknown) as State);
   };
 
   handleSubmit = (event: React.FormEvent) => {
@@ -84,21 +76,18 @@ export default class Index extends React.Component<Props, State> {
   };
 
   render() {
-    const cutHeight = calculateCutHeight({
+    const cutHeight = this.state.pattern.derivates.cutHeight({
       allowance: this.state.allowance,
-      closure: this.state.closure,
-      fold: this.state.fold,
       height: this.state.sewHeight,
       webbing: this.state.webbing,
     });
 
-    const cutWidth = calculateCutWidth({
+    const cutWidth = this.state.pattern.derivates.cutWidth({
       allowance: this.state.allowance,
-      fold: this.state.fold,
       width: this.state.sewWidth,
     });
 
-    const volume = calculateVolume({
+    const volume = this.state.pattern.derivates.volume({
       height: this.state.sewHeight,
       width: this.state.sewWidth,
     });
@@ -107,13 +96,14 @@ export default class Index extends React.Component<Props, State> {
       <PatternContainer>
         <ContainerDimensions>
           {({ height, width }) => (
-            <Pattern
+            <PatternRenderer
               {...this.state}
               cutHeight={cutHeight}
               cutWidth={cutWidth}
               maxHeight={height}
               volume={volume}
               scale={this.calculateScale(width, cutWidth, height, cutHeight)}
+              pattern={this.state.pattern}
             />
           )}
         </ContainerDimensions>
@@ -122,7 +112,7 @@ export default class Index extends React.Component<Props, State> {
 
     const DisplayInstructions = (
       <Instruction>
-        <p>{`These are the instructions to build a ${this.state.fold}, ${this.state.closure} bag.`}</p>
+        <p>{`These are the instructions to build a ${this.state.pattern.name}.`}</p>
       </Instruction>
     );
 
@@ -142,6 +132,7 @@ export default class Index extends React.Component<Props, State> {
           </MainContent>
           <MainSidebar>
             <Configuration
+              patterns={Patterns}
               handleSelectChange={this.handleSelectChange}
               handleSliderChange={this.handleSliderChange}
               handleSubmit={this.handleSubmit}

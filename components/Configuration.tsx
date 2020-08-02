@@ -1,28 +1,26 @@
 /** @jsx jsx */
 import { jsx, Box, Button, Label, Slider, Select } from "theme-ui";
 import { ReactEventHandler } from "react";
-import patterns from "../patterns";
+import modules from "../modules";
 
 interface Props {
   handleSelectChange: ReactEventHandler;
   handleSliderChange: ReactEventHandler;
   handleSubmit: ReactEventHandler;
   allowance: number;
-  closure: string;
-  fold: string;
   sewHeight: number;
   sewWidth: number;
   webbing: number;
-  patterns: Array<any>;
+  modules: Array<any>;
 }
 
 const Configuration = (props: Props) => (
   <Box as="form" onSubmit={props.handleSubmit}>
     <Box mb={4}>
-      <Label>Pattern</Label>
+      <Label>Module</Label>
       <Select onChange={props.handleSelectChange}>
-        {patterns.map((pattern, index) => (
-          <option value={index}>{pattern.name}</option>
+        {modules.map((module, index) => (
+          <option value={index}>{module.name}</option>
         ))}
       </Select>
     </Box>
@@ -71,7 +69,6 @@ const Configuration = (props: Props) => (
         step="5"
         value={props.webbing}
         onChange={props.handleSliderChange}
-        disabled={props.closure != "roll-top"}
       />
     </Box>
     <Button

@@ -13,6 +13,40 @@ interface Props extends PatternProps {
 export default {
   id: "draw-string-vertical",
   name: "Draw-string Bag with vertical fold",
+  attibutes: {
+    allowance: {
+      label: "Seam Allowance",
+      name: "allowance",
+      value: PropTypes.number.isRequired,
+      min: 0,
+      max: 0,
+      step: 10,
+    },
+    height: {
+      label: "Bag Height",
+      name: "sewHeight",
+      value: PropTypes.number.isRequired,
+      min: 0,
+      max: 0,
+      step: 10,
+    },
+    width: {
+      label: "Bag Width",
+      name: "sewWidth",
+      value: PropTypes.number.isRequired,
+      min: 0,
+      max: 0,
+      step: 10,
+    },
+  },
+  presets: [
+    {
+      name: "24L",
+      allowance: 10,
+      height: 480,
+      width: 400,
+    },
+  ],
   derivates: {
     cutHeight: ({ allowance, height }: { allowance: number; height: number }) =>
       allowance * 2 + height,
@@ -21,19 +55,6 @@ export default {
     volume: ({ height, width }: { height: number; width: number }) =>
       calculateVolume({ height, width }),
   },
-  props: {
-    allowance: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
-  },
-  presets: [
-    {
-      name: "24L Tent, Quilt, Food",
-      allowance: 10,
-      height: 480,
-      width: 400,
-    },
-  ],
   Pattern: (props: Props) => (
     <React.Fragment>
       <Cutline

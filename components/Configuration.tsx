@@ -11,7 +11,7 @@ interface Props {
   sewHeight: number;
   sewWidth: number;
   webbing: number;
-  modules: Array<any>;
+  modules: Array<Object>;
 }
 
 const Configuration = (props: Props) => (
@@ -20,7 +20,9 @@ const Configuration = (props: Props) => (
       <Label>Module</Label>
       <Select onChange={props.handleSelectChange}>
         {modules.map((module, index) => (
-          <option value={index}>{module.name}</option>
+          <option key={index} value={index}>
+            {module.name}
+          </option>
         ))}
       </Select>
     </Box>

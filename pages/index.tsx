@@ -28,10 +28,10 @@ export default class Index extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      allowance: Modules[0].defaultProps.allowance,
-      sewHeight: Modules[0].defaultProps.height,
-      sewWidth: Modules[0].defaultProps.width,
-      webbing: Modules[0].defaultProps.webbing,
+      allowance: Modules[0].presets[0].allowance,
+      sewHeight: Modules[0].presets[0].height,
+      sewWidth: Modules[0].presets[0].width,
+      webbing: Modules[0].presets[0].webbing,
       display: "pattern",
       module: Modules[0],
     };

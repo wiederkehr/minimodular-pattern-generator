@@ -35,12 +35,15 @@ export default {
     webbing: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
   },
-  defaultProps: {
-    allowance: 10,
-    height: 480,
-    webbing: 10,
-    width: 360,
-  },
+  presets: [
+    {
+      name: "24L Tent, Quilt, Food",
+      allowance: 10,
+      height: 480,
+      webbing: 20,
+      width: 400,
+    },
+  ],
   Pattern: (props: Props) => (
     <React.Fragment>
       <Cutline

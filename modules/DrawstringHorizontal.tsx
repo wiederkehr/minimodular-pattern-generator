@@ -26,11 +26,14 @@ export default {
     height: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
   },
-  defaultProps: {
-    allowance: 10,
-    height: 480,
-    width: 360,
-  },
+  presets: [
+    {
+      name: "24L Tent, Quilt, Food",
+      allowance: 10,
+      height: 480,
+      width: 400,
+    },
+  ],
   Pattern: (props: Props) => (
     <React.Fragment>
       <Cutline

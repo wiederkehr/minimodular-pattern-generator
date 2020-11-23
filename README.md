@@ -1,3 +1,3 @@
-# Pattern Generator
+# Minimodular Pattern Generator
 
 Sewing pattern generator for organizational packs.

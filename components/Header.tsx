@@ -3,7 +3,7 @@ import { jsx } from "theme-ui";
 import React from "react";
 import HeaderSidebar from "./HeaderSidebar";
 import HeaderContent from "./HeaderContent";
-import Branding from "./Branding";
+import Brand from "./Brand";
 
 const Header: React.FC = ({ children }) => (
   <header
@@ -15,7 +15,7 @@ const Header: React.FC = ({ children }) => (
     }}
   >
     <HeaderSidebar>
-      <Branding />
+      <Brand />
     </HeaderSidebar>
     <HeaderContent>{children}</HeaderContent>
   </header>

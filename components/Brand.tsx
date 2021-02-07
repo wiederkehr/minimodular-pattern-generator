@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { useColorMode } from "theme-ui";
 
-const Branding: React.FC = () => {
+const Brand: React.FC = () => {
   const [colorMode, setColorMode] = useColorMode();
   return (
     <Link href="/" passHref>
@@ -47,4 +47,4 @@ const Branding: React.FC = () => {
   );
 };
 
-export default Branding;
+export default Brand;

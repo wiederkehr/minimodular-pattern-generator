@@ -59,7 +59,8 @@ export default {
       cursor: "pointer",
       fontFamily: "body",
       fontSize: 1,
-      textTransform: "uppercase",
+      //FIXME
+      // textTransform: "uppercase",
       "&:hover": {
         bg: "primary",
         color: "onPrimary",
@@ -78,7 +79,8 @@ export default {
       fontSize: 0,
       paddingX: 3,
       paddingY: 1,
-      textTransform: "uppercase",
+      //FIXME
+      // textTransform: "uppercase",
       "&:hover": {
         color: "onActiveToggle",
       },
@@ -90,7 +92,8 @@ export default {
   forms: {
     label: {
       fontSize: 0,
-      textTransform: "uppercase",
+      //FIXME
+      // textTransform: "uppercase",
     },
     input: {
       fontFamily: "body",
@@ -185,7 +188,8 @@ export default {
     },
     pre: {
       fontFamily: "monospace",
-      overflowX: "auto",
+      //FIXME
+      // overflowX: "auto",
       code: {
         color: "inherit",
       },
@@ -196,15 +200,18 @@ export default {
     },
     table: {
       width: "100%",
-      borderCollapse: "separate",
+      //FIXME
+      // borderCollapse: "separate",
       borderSpacing: 0,
     },
     th: {
-      textAlign: "left",
+      //FIXME
+      // textAlign: "left",
       borderBottomStyle: "solid",
     },
     td: {
-      textAlign: "left",
+      //FIXME
+      // textAlign: "left",
       borderBottomStyle: "solid",
     },
     img: {

@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Button } from "theme-ui";
+/** @jsxImportSource theme-ui */
+import { Button } from "theme-ui";
 import React, { ReactNode } from "react";
 
 interface ToggleProps {
@@ -22,7 +22,7 @@ const Toggle = (props: ToggleProps) => {
 };
 
 interface ToggleOptionProps {
-  active?: boolean | null | undefined;
+  active?: boolean;
   children: ReactNode;
   onClick?: Function;
   value: string;
@@ -55,7 +55,7 @@ const ToggleOption = (props: ToggleOptionProps) => (
 );
 
 interface ToggleButtonProps {
-  active?: boolean | null | undefined;
+  active?: boolean;
   children: ReactNode;
   onClick?: Function;
   value: string;

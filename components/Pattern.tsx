@@ -1,12 +1,11 @@
-/** @jsx jsx */
-import { jsx, Box } from "theme-ui";
+/** @jsxImportSource theme-ui */
+import { Box } from "theme-ui";
 import ContainerDimensions from "react-container-dimensions";
 import { PatternProps } from "./PatternProps";
 import { cutlineWidth } from "./PatternElements";
 
 interface Props extends PatternProps {
-  module: object;
-  webbing: number;
+  module: any;
 }
 
 const Pattern = (props: Props) => {

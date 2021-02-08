@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
+/** @jsxImportSource theme-ui */
+
 import React from "react";
 import downloadSvg from "svg-crowbar";
 import Page from "../components/Page";
@@ -21,7 +21,7 @@ interface State {
   sewWidth: number;
   webbing: number;
   display: "pattern" | "instruction";
-  module: Object;
+  module: any;
 }
 
 export default class Index extends React.Component<Props, State> {

@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
+/** @jsxImportSource theme-ui */
+
 import React from "react";
 import PropTypes from "prop-types";
 import { Cutline, Sewline, Fold, Volume } from "../components/PatternElements";
@@ -17,6 +17,14 @@ export default {
     allowance: {
       label: "Seam Allowance",
       name: "allowance",
+      value: PropTypes.number.isRequired,
+      min: 0,
+      max: 0,
+      step: 10,
+    },
+    webbing: {
+      label: "Webbing Width",
+      name: "webbing",
       value: PropTypes.number.isRequired,
       min: 0,
       max: 0,
@@ -43,6 +51,7 @@ export default {
     {
       name: "24L",
       allowance: 10,
+      webbing: 0,
       height: 480,
       width: 400,
     },

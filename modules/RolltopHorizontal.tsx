@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
+/** @jsxImportSource theme-ui */
+
 import React from "react";
 import PropTypes from "prop-types";
 import { Cutline, Sewline, Fold, Volume } from "../components/PatternElements";
@@ -8,7 +8,6 @@ import { calculateVolume } from "../helpers/calculateVolume";
 
 interface Props extends PatternProps {
   scale: number;
-  webbing: number;
 }
 
 export default {

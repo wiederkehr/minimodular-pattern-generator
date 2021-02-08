@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, Box, Button, Label, Slider, Select } from "theme-ui";
+/** @jsxImportSource theme-ui */
+import { Box, Button, Label, Slider, Select } from "theme-ui";
 import { ReactEventHandler } from "react";
 import modules from "../modules";
 

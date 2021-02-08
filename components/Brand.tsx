@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useColorMode } from "theme-ui";
 
 const Brand: React.FC = () => {
-  const [colorMode, setColorMode] = useColorMode();
+  const [colorMode] = useColorMode();
   return (
     <Link href="/" passHref>
       <a

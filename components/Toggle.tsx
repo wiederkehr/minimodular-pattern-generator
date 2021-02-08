@@ -22,7 +22,7 @@ const Toggle = (props: ToggleProps) => {
 };
 
 interface ToggleOptionProps {
-  active?: boolean;
+  active?: boolean | null | undefined;
   children: ReactNode;
   onClick?: Function;
   value: string;
@@ -55,7 +55,7 @@ const ToggleOption = (props: ToggleOptionProps) => (
 );
 
 interface ToggleButtonProps {
-  active?: boolean;
+  active?: boolean | null | undefined;
   children: ReactNode;
   onClick?: Function;
   value: string;

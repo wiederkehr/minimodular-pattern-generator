@@ -13,7 +13,6 @@ const Toggle = (props: ToggleProps) => {
     props.children,
     (child: React.ReactNode) => {
       return React.cloneElement(child as React.ReactElement<any>, {
-        active: props.value === child.props.value,
         onClick: props.onChange,
       });
     }

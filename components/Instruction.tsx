@@ -4,12 +4,12 @@ import Measurement from "./Measurement";
 
 interface Props {
   children?: React.ReactNode;
-  allowance: number;
-  sewHeight: number;
-  sewWidth: number;
   cutHeight: number;
   cutWidth: number;
-  webbing: number;
+  cuffAllowance: number;
+  seamAllowance: number;
+  sewHeight: number;
+  sewWidth: number;
   volume: number;
   display: "pattern" | "instruction";
   module: any;
@@ -19,12 +19,12 @@ const Instruction = (props: Props) => (
   <Box>
     <p>{`These are the instructions to build a ${props.module.name}.`}</p>
     <Measurement
-      allowance={props.allowance}
       cutHeight={props.cutHeight}
       cutWidth={props.cutWidth}
+      cuffAllowance={props.cuffAllowance}
+      seamAllowance={props.seamAllowance}
       sewHeight={props.sewHeight}
       sewWidth={props.sewWidth}
-      webbing={props.webbing}
       volume={props.volume}
     />
   </Box>

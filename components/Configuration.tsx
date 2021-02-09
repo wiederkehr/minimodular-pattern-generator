@@ -7,10 +7,10 @@ interface Props {
   handleSelectChange: ReactEventHandler;
   handleSliderChange: ReactEventHandler;
   handleSubmit: ReactEventHandler;
-  allowance: number;
+  cuffAllowance: number;
+  seamAllowance: number;
   sewHeight: number;
   sewWidth: number;
-  webbing: number;
   modules: Array<Object>;
 }
 
@@ -47,17 +47,17 @@ const Configuration = (props: Props) => (
         value={props.sewHeight}
         onChange={props.handleSliderChange}
       />
-      <Label sx={{textTransform: "uppercase"}}>Seam Allowance: {props.allowance}</Label>
+      <Label sx={{textTransform: "uppercase"}}>Seam Allowance: {props.seamAllowance}</Label>
       <Slider
         mb={3}
-        name="allowance"
+        name="seamAllowance"
         max="50"
         min="10"
         step="5"
-        value={props.allowance}
+        value={props.seamAllowance}
         onChange={props.handleSliderChange}
       />
-      <Label sx={{textTransform: "uppercase"}}>Webbing Width: {props.webbing}</Label>
+      <Label sx={{textTransform: "uppercase"}}>Cuff Allowance: {props.cuffAllowance}</Label>
       <Slider
         sx={{
           "&:disabled": {
@@ -65,11 +65,11 @@ const Configuration = (props: Props) => (
             backgroundColor: "disabled",
           },
         }}
-        name="webbing"
+        name="cuffAllowance"
         max="50"
         min="10"
         step="5"
-        value={props.webbing}
+        value={props.cuffAllowance}
         onChange={props.handleSliderChange}
       />
     </Box>

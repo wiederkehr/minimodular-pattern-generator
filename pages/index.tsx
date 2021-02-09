@@ -15,10 +15,10 @@ import Modules from "../modules";
 
 interface Props {}
 interface State {
-  allowance: number;
+  cuffAllowance: number;
+  seamAllowance: number;
   sewHeight: number;
   sewWidth: number;
-  webbing: number;
   display: "pattern" | "instruction";
   module: any;
 }
@@ -27,10 +27,10 @@ export default class Index extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      allowance: Modules[0].presets[0].allowance,
+      cuffAllowance: Modules[0].presets[0].cuffAllowance,
+      seamAllowance: Modules[0].presets[0].seamAllowance,
       sewHeight: Modules[0].presets[0].height,
       sewWidth: Modules[0].presets[0].width,
-      webbing: Modules[0].presets[0].webbing,
       display: "pattern",
       module: Modules[0],
     };
@@ -62,12 +62,12 @@ export default class Index extends React.Component<Props, State> {
 
   render() {
     const cutHeight = this.state.module.derivates.cutHeight({
-      allowance: this.state.allowance,
+      cuffAllowance: this.state.cuffAllowance,
+      seamAllowance: this.state.seamAllowance,
       height: this.state.sewHeight,
-      webbing: this.state.webbing,
     });
     const cutWidth = this.state.module.derivates.cutWidth({
-      allowance: this.state.allowance,
+      seamAllowance: this.state.seamAllowance,
       width: this.state.sewWidth,
     });
     const volume = this.state.module.derivates.volume({
@@ -108,10 +108,10 @@ export default class Index extends React.Component<Props, State> {
               handleSelectChange={this.switchModule}
               handleSliderChange={this.handleSliderChange}
               handleSubmit={this.handleSubmit}
-              allowance={this.state.allowance}
+              cuffAllowance={this.state.cuffAllowance}
+              seamAllowance={this.state.seamAllowance}
               sewHeight={this.state.sewHeight}
               sewWidth={this.state.sewWidth}
-              webbing={this.state.webbing}
             />
           </MainSidebar>
         </Main>

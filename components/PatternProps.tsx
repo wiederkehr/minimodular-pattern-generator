@@ -1,6 +1,6 @@
 export interface PatternProps {
-  allowance: number;
-  webbing: number;
+  seamAllowance: number;
+  cuffAllowance: number;
   cutHeight: number;
   cutWidth: number;
   sewHeight: number;

@@ -34,12 +34,12 @@ const Pattern = (props: Props) => {
             }}
           >
             {props.module.Pattern({
-              allowance: props.allowance,
-              sewHeight: props.sewHeight,
-              sewWidth: props.sewWidth,
-              webbing: props.webbing,
               cutHeight: props.cutHeight,
               cutWidth: props.cutWidth,
+              cuffAllowance: props.cuffAllowance,
+              seamAllowance: props.seamAllowance,
+              sewHeight: props.sewHeight,
+              sewWidth: props.sewWidth,
               volume: props.volume,
               scale: calculateScale(height, width),
             })}

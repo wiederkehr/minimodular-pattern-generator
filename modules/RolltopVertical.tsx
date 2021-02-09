@@ -12,11 +12,19 @@ interface Props extends PatternProps {
 
 export default {
   id: "roll-top-vertical",
-  name: "Roll-top Bag with vertical fold",
+  name: "Roll-top with vertical fold",
   attibutes: {
-    allowance: {
+    cuffAllowance: {
+      label: "Cuff Allowance",
+      name: "cuffAllowance",
+      value: PropTypes.number.isRequired,
+      min: 0,
+      max: 0,
+      step: 10,
+    },
+    seamAllowance: {
       label: "Seam Allowance",
-      name: "allowance",
+      name: "seamAllowance",
       value: PropTypes.number.isRequired,
       min: 0,
       max: 0,
@@ -25,14 +33,6 @@ export default {
     height: {
       label: "Bag Height",
       name: "sewHeight",
-      value: PropTypes.number.isRequired,
-      min: 0,
-      max: 0,
-      step: 10,
-    },
-    webbing: {
-      label: "Webbing Width",
-      name: "webbing",
       value: PropTypes.number.isRequired,
       min: 0,
       max: 0,
@@ -50,24 +50,24 @@ export default {
   presets: [
     {
       name: "24L",
-      allowance: 10,
+      cuffAllowance: 10,
+      seamAllowance: 10,
       height: 480,
-      webbing: 10,
       width: 400,
     },
   ],
   derivates: {
     cutHeight: ({
-      allowance,
+      cuffAllowance,
+      seamAllowance,
       height,
-      webbing,
     }: {
-      allowance: number;
+      cuffAllowance: number;
+      seamAllowance: number;
       height: number;
-      webbing: number;
-    }) => allowance + height + webbing * 2,
-    cutWidth: ({ allowance, width }: { allowance: number; width: number }) =>
-      allowance * 2 + width * 2,
+    }) => seamAllowance + height + cuffAllowance * 2,
+    cutWidth: ({ seamAllowance, width }: { seamAllowance: number; width: number }) =>
+      seamAllowance * 2 + width * 2,
     volume: ({ height, width }: { height: number; width: number }) =>
       calculateVolume({ height, width }),
   },
@@ -82,14 +82,14 @@ export default {
         height={props.sewHeight}
         scale={props.scale}
         width={props.sewWidth * 2}
-        x={props.allowance}
-        y={props.webbing * 2}
+        x={props.seamAllowance}
+        y={props.cuffAllowance * 2}
       />
       <Fold
         x1={props.cutWidth / 2}
         x2={props.cutWidth / 2}
-        y1={props.webbing * 2}
-        y2={props.cutHeight - props.allowance}
+        y1={props.cuffAllowance * 2}
+        y2={props.cutHeight - props.seamAllowance}
       />
       <Volume
         scale={props.scale}

@@ -2,12 +2,12 @@
 
 
 interface MeasurementProps {
-  allowance: number;
   cutHeight: number;
   cutWidth: number;
+  cuffAllowance: number;
+  seamAllowance: number;
   sewHeight: number;
   sewWidth: number;
-  webbing: number;
   volume: number;
 }
 

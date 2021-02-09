@@ -1,6 +1,5 @@
 /** @jsxImportSource theme-ui */
 
-
 export const cutlineWidth = 2;
 
 export const Cutline = ({

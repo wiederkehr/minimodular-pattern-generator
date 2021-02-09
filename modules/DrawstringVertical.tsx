@@ -12,19 +12,19 @@ interface Props extends PatternProps {
 
 export default {
   id: "draw-string-vertical",
-  name: "Draw-string Bag with vertical fold",
+  name: "Draw-string with vertical fold",
   attibutes: {
-    allowance: {
-      label: "Seam Allowance",
-      name: "allowance",
+    cuffAllowance: {
+      label: "Cuff Allowance",
+      name: "cuffAllowance",
       value: PropTypes.number.isRequired,
       min: 0,
       max: 0,
       step: 10,
     },
-    webbing: {
-      label: "Webbing Width",
-      name: "webbing",
+    seamAllowance: {
+      label: "Seam Allowance",
+      name: "seamAllowance",
       value: PropTypes.number.isRequired,
       min: 0,
       max: 0,
@@ -50,17 +50,24 @@ export default {
   presets: [
     {
       name: "24L",
-      allowance: 10,
-      webbing: 0,
+      cuffAllowance: 10,
+      seamAllowance: 10,
       height: 480,
       width: 400,
     },
   ],
   derivates: {
-    cutHeight: ({ allowance, height }: { allowance: number; height: number }) =>
-      allowance * 2 + height,
-    cutWidth: ({ allowance, width }: { allowance: number; width: number }) =>
-      allowance * 2 + width * 2,
+    cutHeight: ({
+      cuffAllowance,
+      seamAllowance,
+      height,
+    }: {
+      cuffAllowance: number;
+      seamAllowance: number;
+      height: number;
+    }) => seamAllowance + height + cuffAllowance * 2,
+    cutWidth: ({ seamAllowance, width }: { seamAllowance: number; width: number }) =>
+      seamAllowance * 2 + width * 2,
     volume: ({ height, width }: { height: number; width: number }) =>
       calculateVolume({ height, width }),
   },
@@ -75,14 +82,14 @@ export default {
         height={props.sewHeight}
         scale={props.scale}
         width={props.sewWidth * 2}
-        x={props.allowance}
-        y={props.allowance}
+        x={props.seamAllowance}
+        y={props.cuffAllowance * 2}
       />
       <Fold
         x1={props.cutWidth / 2}
         x2={props.cutWidth / 2}
-        y1={props.allowance}
-        y2={props.cutHeight - props.allowance}
+        y1={props.cuffAllowance * 2}
+        y2={props.cutHeight - props.seamAllowance}
       />
       <Volume
         scale={props.scale}

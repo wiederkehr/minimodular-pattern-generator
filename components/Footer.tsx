@@ -3,7 +3,7 @@
 import React from "react";
 import FooterSidebar from "./FooterSidebar";
 import FooterContent from "./FooterContent";
-import Credits from "./Credits";
+import Version from "./Version";
 import ThemeToggle from "./ThemeToggle";
 
 const Footer: React.FC = () => (
@@ -16,7 +16,7 @@ const Footer: React.FC = () => (
     }}
   >
     <FooterSidebar>
-      <Credits />
+      <Version />
       <ThemeToggle />
     </FooterSidebar>
     <FooterContent />

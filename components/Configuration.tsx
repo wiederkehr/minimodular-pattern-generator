@@ -17,7 +17,7 @@ interface Props {
 const Configuration = (props: Props) => (
   <Box as="form" onSubmit={props.handleSubmit}>
     <Box mb={4}>
-      <Label>Module</Label>
+      <Label sx={{textTransform: "uppercase"}}>Module</Label>
       <Select onChange={props.handleSelectChange}>
         {modules.map((module, index) => (
           <option key={index} value={index}>
@@ -27,7 +27,7 @@ const Configuration = (props: Props) => (
       </Select>
     </Box>
     <Box mb={4}>
-      <Label>Bag Width: {props.sewWidth}</Label>
+      <Label sx={{textTransform: "uppercase"}}>Bag Width: {props.sewWidth}</Label>
       <Slider
         mb={3}
         name="sewWidth"
@@ -37,7 +37,7 @@ const Configuration = (props: Props) => (
         value={props.sewWidth}
         onChange={props.handleSliderChange}
       />
-      <Label>Bag Height: {props.sewHeight}</Label>
+      <Label sx={{textTransform: "uppercase"}}>Bag Height: {props.sewHeight}</Label>
       <Slider
         mb={3}
         name="sewHeight"
@@ -47,7 +47,7 @@ const Configuration = (props: Props) => (
         value={props.sewHeight}
         onChange={props.handleSliderChange}
       />
-      <Label>Seam Allowance: {props.allowance}</Label>
+      <Label sx={{textTransform: "uppercase"}}>Seam Allowance: {props.allowance}</Label>
       <Slider
         mb={3}
         name="allowance"
@@ -57,7 +57,7 @@ const Configuration = (props: Props) => (
         value={props.allowance}
         onChange={props.handleSliderChange}
       />
-      <Label>Webbing Width: {props.webbing}</Label>
+      <Label sx={{textTransform: "uppercase"}}>Webbing Width: {props.webbing}</Label>
       <Slider
         sx={{
           "&:disabled": {

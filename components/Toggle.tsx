@@ -67,6 +67,7 @@ const ToggleButton = (props: ToggleButtonProps) => (
     sx={{
       bg: props.active ? "toggle" : "transparent",
       color: props.active ? "onActiveToggle" : "onToggle",
+      textTransform: "uppercase",
     }}
     onClick={() => {
       props.onClick ? props.onClick(props.value) : null;

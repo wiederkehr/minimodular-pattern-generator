@@ -35,8 +35,9 @@ const Brand: React.FC = () => (
       <span
         sx={{
           color: "onSurface",
-          fontWeight: 600,
-          fontSize: 0,
+          fontWeight: 500,
+          fontSize: 1,
+          textTransform: "uppercase",
           marginLeft: "1rem",
         }}
       >

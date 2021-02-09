@@ -9,15 +9,15 @@ export default {
     footer: 60,
   },
   fonts: {
-    body: "'IBM Plex Mono', monospace",
-    heading: "'IBM Plex Mono', monospace",
-    monospace: "'IBM Plex Mono', monospace",
+    body: "'Source Code Pro', monospace",
+    heading: "'Source Serif Pro', serif",
+    monospace: "'Source Code Pro', monospace",
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
     body: 400,
-    heading: 600,
-    bold: 600,
+    bold: 700,
+    heading: 700,
   },
   lineHeights: {
     body: 1.5,
@@ -36,16 +36,20 @@ export default {
     onToggle: palette.mono[6],
     onActiveToggle: palette.mono[0],
     disabled: palette.mono[8],
+    muted: palette.mono[6],
     modes: {
       dark: {
-        text: palette.mono[12],
-        surface: palette.mono[0],
-        onSurface: palette.mono[12],
-        background: palette.mono[2],
-        onBackground: palette.mono[12],
-        border: palette.mono[2],
-        primary: palette.mono[12],
-        onPrimary: palette.mono[0],
+        text: palette.mono[8],
+        surface: palette.mono[2],
+        onSurface: palette.mono[8],
+        background: palette.mono[1],
+        onBackground: palette.mono[8],
+        border: palette.mono[3],
+        primary: palette.mono[6],
+        onPrimary: palette.mono[2],
+        toggle: palette.mono[3],
+        onToggle: palette.mono[10],
+        onActiveToggle: palette.mono[10],
         disabled: palette.mono[4],
       },
     },
@@ -59,8 +63,6 @@ export default {
       cursor: "pointer",
       fontFamily: "body",
       fontSize: 1,
-      //FIXME
-      // textTransform: "uppercase",
       "&:hover": {
         bg: "primary",
         color: "onPrimary",
@@ -79,8 +81,6 @@ export default {
       fontSize: 0,
       paddingX: 3,
       paddingY: 1,
-      //FIXME
-      // textTransform: "uppercase",
       "&:hover": {
         color: "onActiveToggle",
       },
@@ -92,8 +92,6 @@ export default {
   forms: {
     label: {
       fontSize: 0,
-      //FIXME
-      // textTransform: "uppercase",
     },
     input: {
       fontFamily: "body",
@@ -188,8 +186,6 @@ export default {
     },
     pre: {
       fontFamily: "monospace",
-      //FIXME
-      // overflowX: "auto",
       code: {
         color: "inherit",
       },
@@ -200,18 +196,12 @@ export default {
     },
     table: {
       width: "100%",
-      //FIXME
-      // borderCollapse: "separate",
       borderSpacing: 0,
     },
     th: {
-      //FIXME
-      // textAlign: "left",
       borderBottomStyle: "solid",
     },
     td: {
-      //FIXME
-      // textAlign: "left",
       borderBottomStyle: "solid",
     },
     img: {

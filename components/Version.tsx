@@ -2,8 +2,8 @@
 
 import React from "react";
 
-const Credits: React.FC = () => (
+const Version: React.FC = () => (
   <p sx={{ padding: 0, margin: 0 }}>Version 0.1</p>
 );
 
-export default Credits;
+export default Version;

@@ -1,10 +1,9 @@
 /** @jsxImportSource theme-ui */
-
+import site from "../site.config"
 import React from "react";
 import downloadSvg from "svg-crowbar";
 import Page from "../components/Page";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Main from "../components/Main";
 import MainContent from "../components/MainContent";
 import MainSidebar from "../components/MainSidebar";
@@ -76,7 +75,9 @@ export default class Index extends React.Component<Props, State> {
       width: this.state.sewWidth,
     });
     return (
-      <Page>
+      <Page
+        title={site.title}
+        description={site.description}>
         <Header>
           <DisplayToggle
             display={this.state.display}
@@ -114,7 +115,6 @@ export default class Index extends React.Component<Props, State> {
             />
           </MainSidebar>
         </Main>
-        <Footer />
       </Page>
     );
   }

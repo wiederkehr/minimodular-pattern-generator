@@ -20,7 +20,8 @@ const Brand: React.FC = () => (
           textDecoration: "underline",
         },
       }}
-      aria-label="Home"
+      aria-label={config.title}
+      title={config.title}
     >
     <svg width="24px" height="24px" viewBox="0 0 120 120" version="1.1">
       <title>Minimodular Logo</title>

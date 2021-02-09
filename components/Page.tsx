@@ -1,18 +1,21 @@
-/** @jsxImportSource theme-ui */
+import Meta from "./Meta";
+import Layout from "./Layout";
+import Footer from "./Footer";
 
-import React from "react";
+interface PageProps {
+  children?: React.ReactNode;
+  title?: string;
+  description?: string;
+  author?: string;
+  image?: string;
+}
 
-const Page: React.FC = ({ children }) => (
-  <div
-    sx={{
-      backgroundColor: "background",
-      display: "flex",
-      flexDirection: "column",
-      minHeight: "100vh",
-    }}
-  >
-    {children}
-  </div>
-);
+const Page = (props: PageProps) => (
+  <Layout>
+    <Meta {...props} />
+    {props.children}
+    <Footer />
+  </Layout>
+)
 
 export default Page;

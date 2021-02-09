@@ -1,19 +1,23 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 
-export default class MyDocument extends Document {
+export default class Document extends NextDocument {
   render() {
     return (
       <Html>
         <Head>
           <link
             rel="icon"
-            type="image/png"
-            href="/minimodular_logo_positive.png"
-          ></link>
+            type="image/svg+xml"
+            href="/minimodular_logo_positive.svg">
+          </link>
           <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;600&display=swap"
-            rel="stylesheet"
-          />
+            rel="preconnect"
+            href="https://fonts.gstatic.com">
+          </link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;700&family=Source+Serif+Pro:wght@400;600;700&display=swap"
+            rel="stylesheet">
+          </link>
         </Head>
         <body>
           <Main />

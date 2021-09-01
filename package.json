@@ -10,7 +10,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "next": "^10.0.6",
+    "next": "^11.1.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-container-dimensions": "^1.4.1",
